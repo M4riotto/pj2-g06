@@ -1,18 +1,19 @@
 <?php
-session_start();
+session_start(); /* serve para iniciar uma sessão */
 require('conexao.php');//junta o código do outro arquivo
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])) {//empty = vazio
-	header('Location: index.php');
-	exit();
+	header('Location: index.php'); /* se estiver vazio é para retornar para index.php */
+	exit(); /* como se fosse o break */
 }
 
-$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);//evita erros do sql ;
+$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);// mysqli_real_escape_string: evita erros do sql ;
 $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
-$query = "select usuario from usuario where usuario = '{$usuario}' and senha = md5('{$senha}')";
+$query = "select usuario from usuario where usuario = '{$usuario}' and senha = md5('{$senha}')"; /* query: consulta.
+md5: ele criptografica a senha. */
 
-$result = mysqli_query($conexao, $query);//A consulta acnotece
+$result = mysqli_query($conexao, $query);//A consulta acontece. $conexao passará conexao com o banco, após isso $query passará o que está em cima na variavel.
 
 $row = mysqli_num_rows($result);//numero de linha retornadas
 
