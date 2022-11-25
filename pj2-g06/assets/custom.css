@@ -1,0 +1,112 @@
+/*paleta de cores*/
+:root{
+    --primary: #298519;
+    --secundary: #13645b;
+    --secundary-dark: #034d45;
+    --grey-0: #000;   
+    --grey-200: #181818;
+    --grey-400: #414141;
+    --grey-600: #818181;
+    --grey-800: #d3d3d3;
+    --grey-1000:#fff;
+  
+  
+    --color-primary-5: #56AB89;
+    --fundo: #90EFE2;
+    --nav: #3FCDB9;
+    --color-primary-3: #2E795B;
+    --color-primary-4: #0F3526;
+}
+
+/*mini reset*/
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/*cor da navbar*/
+.bg-faded{
+    background-color: var(--nav);
+}
+
+/* Div com os botões categoria e ver tudo alinhados */
+.botoes_categoria{
+    display: flex;
+    justify-content: space-between;
+}
+  
+/* Alinhamento das bolinhas de categorias*/
+.cat{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+/*scroll*/
+.cat::-webkit-scrollbar {
+    height: 10px;               /* width of the entire scrollbar */
+  }
+.cat::-webkit-scrollbar-track {
+    background: var(--grey-400);        /* color of the tracking area */
+  }
+  
+.cat::-webkit-scrollbar-thumb {
+    background-color: var(--grey-600);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
+
+/*card*/
+.card-rodape-empresa{
+    font-size: 0.7rem;
+}
+
+.card{
+    width: 350px;
+}
+
+#corpo1{
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
+
+/*modal*/
+.modal{
+    background-color: #0c0c0c85;
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-body{
+    width: 600px;
+    border-radius: 15px;
+    background: var(--grey-1000);
+    color: var(--grey-0);
+    padding: 30px 20px;
+}
+
+.modal .modal-body form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .modal-body form label{
+    margin: 15px 0 0 0;
+}
+
+.modal .modal-body form input[type=text]{
+    height: 30px;
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+
+.modal .modal-body form button{
+    margin: 15px 0 0 0;
+}
