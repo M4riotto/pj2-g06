@@ -20,10 +20,13 @@ include('verifica_login.php');
         flex-direction: column;
         align-items: center;
     }
+    span{
+        color: white;
+    }
 </style>
 <body >
     <header>
-        <h2>Olá, <?php echo $_SESSION['usuario'];?></h2>
+        <h2>Olá, <span><?php echo $_SESSION['usuario'];?></span></h2>
         <h2><a href="logout.php">Sair</a></h2>
     </header>   
 <br><br>
