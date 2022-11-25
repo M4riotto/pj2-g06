@@ -30,7 +30,7 @@ session_start();
                     </div>
                     <?php
                     endif;
-                    unset($_SESSION['nao_autenticado']);
+                    unset($_SESSION['nao_autenticado']);//apaga a própria chave nao_autenticado do array session
                     ?>
                     <div class="box">
                         <form action="login.php" method="POST">
