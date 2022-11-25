@@ -6,14 +6,16 @@
     $descricao = $_POST["descricao"];
     $dia = $_POST["dia"];
     $horario = $_POST["horario"];
+    $capa = $_POST["capa"];
 
     try {
-        $stmt = $connect->prepare("INSERT INTO eventos (nome, descricao, dia, horario)
-        VALUES (:nome, :descricao, :dia, :horario)");
+        $stmt = $connect->prepare("INSERT INTO eventos (nome, capa, descricao, dia, horario)
+        VALUES (:nome, :capa, :descricao, :dia, :horario)");
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':descricao', $descricao);
         $stmt->bindParam(':dia', $dia);
         $stmt->bindParam(':horario', $horario);
+        $stmt->bindParam(':capa', $capa);
 
         $stmt->execute();
         // echo "Cadastro com sucesso!";
@@ -23,6 +25,7 @@
 
         $result["data"]["id"] = $id; //criamos o array para devolver o resultado do insert com os dados inseridos.
         $result["data"]["nome"] = $nome;
+        $result["data"]["capa"] = $capa;
         $result["data"]["descricao"] = $descricao;
         $result["data"]["dia"] = $dia;
         $result["data"]["horario"] = $horario;

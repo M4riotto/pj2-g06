@@ -33,6 +33,9 @@ include('verifica_login.php');
             <label for="POST-name">Nome do evento:</label>
             <input id="POST-name" type="text" name="nome">
             <br>
+            <label for="POST-name">Capa do evento:</label>
+            <input id="POST-name" type="text" name="capa">
+            <br>
             <label for="POST-name">Descrição:</label>
             <input id="POST-name" type="text" name="descricao">
             <br>

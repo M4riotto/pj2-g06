@@ -44,11 +44,26 @@ async function loadEventos() {
         const clientes = result.data
         clientes.map((eventos) => {
             listaClientes.innerHTML += `
-                    ${eventos.nome}
-                    ${eventos.descricao}
-                    ${eventos.dia}
-                    ${eventos.horario}`
-     
+                    <div class="col-sm-3 col-lg-3">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">DIA: ${eventos.dia}</li>
+                                <li class="list-group-item">horario: ${eventos.horario}</li>
+                            </ul>
+                            <div class="card-body p-2">
+                                <a href="#" class="card-link">SEPARAR VAGA</a>
+                                <a href="#" class="card-link">Detalhes..</a>
+                            </div>
+                            <div class="card-footer text-right card-rodape-empresa text-muted">EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                            </div>
+                          </div><!--card-->
+                        </div><!--col do car--> `              
         })
 
     }else{

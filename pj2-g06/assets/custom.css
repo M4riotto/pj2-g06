@@ -65,10 +65,9 @@ body, html{
     width: 350px;
 }
 
-#corpo1{
+#festas{
     display: flex;
-    flex-direction: column-reverse;
-    
+    overflow-x: scroll;
 }
 
 /*modal*/
@@ -109,4 +108,10 @@ body, html{
 
 .modal .modal-body form button{
     margin: 15px 0 0 0;
+}
+
+@media screen and (max-width: 600px){
+    .card{
+        width: 200px;
+    }
 }
