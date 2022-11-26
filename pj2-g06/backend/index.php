@@ -1,6 +1,6 @@
 <?php
-session_start();
-ob_start();
+session_start();//iniciar uma seção
+ob_start();//previnir erro de redirecionamento, limpando buffer de redirecionamento
 require 'database/database.php'; // include_once = incluir apena 1 vez 
 ?>
 <!DOCTYPE html>
@@ -13,13 +13,9 @@ require 'database/database.php'; // include_once = incluir apena 1 vez
 </head>
 
 <body>
-    <?php
-    //Exemplo criptografar a senha
-    //echo password_hash(123456, PASSWORD_DEFAULT);
-    ?>
             <h1>Login</h1>
     <?php
-    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);//filter = receber todos os dados do form em um array (método que esta usando, receber os dados como string)
+    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);//filter_input_array = receber todos os dados do form em um array (método que esta usando, receber os dados como string)
 
     if (!empty($dados['SendLogin'])) { //empty = vazio || só acessa esse if qnd o usuario clicar no botao
         $query_usuario = "SELECT id, nome, usuario, senha_usuario 
