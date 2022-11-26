@@ -30,7 +30,7 @@ require 'database/database.php'; // include_once = incluir apena 1 vez
                         LIMIT 1"; //salvando esse texto na variavel
 
         $result_usuario = $connect->prepare($query_usuario);//fazendo o select no BDD
-        $result_usuario->bindParam(':usuario', $dados['usuario']);//bind param = substituir o valor
+        $result_usuario->bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);//bind param = substituir o valor
         $result_usuario->execute();//executando a query
 
         if(($result_usuario) AND ($result_usuario->rowCount() != 0)){//se a qtnd de linha que encontrou no BDD for ! 0, então acessar o IF 

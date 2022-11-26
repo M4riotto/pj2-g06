@@ -173,10 +173,13 @@
     <div class="modal-body">
         <h1>Cadastro</h1>
         <form onsubmit="insertCadastro(event)">
+          <label for="nome">Seu Nome:</label>
+            <input type="text" name="nome">
             <label for="usuario">Usuario:</label>
             <input type="text" name="usuario">
             <label for="senha">Senha:</label>
             <input type="text" name="senha">
+            
             <button type="submit" onclick="closeAllModal()">Cadastrar</button>
         </form>
     </div>
