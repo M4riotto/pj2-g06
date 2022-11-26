@@ -14,16 +14,29 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){//isset = existir
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
-    <title>Celke - Login</title>
+    <title>PAINEL</title>
 </head>
 <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+
     form{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     span{
-        color: white;
+        color: red;
+    }
+
+    header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: green;
+        height: 80px;
     }
 </style>
 <body >

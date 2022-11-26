@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Nov-2022 às 16:15
+-- Tempo de geração: 26-Nov-2022 às 19:55
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -32,18 +32,36 @@ CREATE TABLE `eventos` (
   `nome` varchar(100) NOT NULL,
   `descricao` varchar(300) NOT NULL,
   `dia` varchar(11) NOT NULL,
-  `horario` varchar(11) NOT NULL
+  `horario` varchar(11) NOT NULL,
+  `capa` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`) VALUES
-(17, 'D', 'WQDF', 'QWF', 'qwf'),
-(18, 'teste', 'teste', 'teste', 'teste'),
-(19, 'angulano asiatico', 'angolanos que sao asiaticosa', '30/02', 'meio pras 4'),
-(20, 'udnertake', 'testesese resxres 25y21 ashdt', '21-08', '09hs');
+INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`) VALUES
+(24, 'LIONS', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eum voluptatibus eaque fugiat. Assumenda asperiores,', '10-01-2023', '20:30hs', 'https://c0.wallpaperflare.com/preview/142/668/835/king-lion-the-lion-king-crown.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(220) CHARACTER SET utf8 NOT NULL,
+  `usuario` varchar(220) CHARACTER SET utf8 NOT NULL,
+  `senha_usuario` varchar(250) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha_usuario`) VALUES
+(2, 'Xoxo', 'giovanna', '$2y$10$dK/QXFd6u1DPBxL11IKbNec0.Jbc8/1p.tlw6gwI1Q75sWacb2WAW');
 
 --
 -- Índices para tabelas despejadas
@@ -56,6 +74,12 @@ ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -63,7 +87,13 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

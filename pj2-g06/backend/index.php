@@ -9,7 +9,7 @@ require 'database/database.php'; // include_once = incluir apena 1 vez
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
-    <title>Celke - Login</title>
+    <title>lOGIN</title>
 </head>
 
 <body>
@@ -17,9 +17,7 @@ require 'database/database.php'; // include_once = incluir apena 1 vez
     //Exemplo criptografar a senha
     //echo password_hash(123456, PASSWORD_DEFAULT);
     ?>
-
-    <h1>Login</h1>
-
+            <h1>Login</h1>
     <?php
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);//filter = receber todos os dados do form em um array (método que esta usando, receber os dados como string)
 
@@ -58,20 +56,19 @@ require 'database/database.php'; // include_once = incluir apena 1 vez
         unset($_SESSION['msg']);//destrua apenas essa 
     }
     ?>
+        <form method="POST" action="">     
 
-    <form method="POST" action="">
-        <label>Usuário</label>
-        <input type="text" name="usuario" placeholder="Digite o usuário" value="<?php if(isset($dados['usuario'])){ echo $dados['usuario']; } ?>"><br><br><!--mantendo o que o cara digitou caso ele erre algo-->
+            <label>Usuário</label>
+            <input type="text" name="usuario" placeholder="Digite o usuário" value="<?php if(isset($dados['usuario'])){ echo $dados['usuario']; } ?>"><br><br><!--mantendo o que o cara digitou caso ele erre algo-->
 
-        <label>Senha</label>
-        <input type="password" name="senha_usuario" placeholder="Digite a senha" value="<?php if(isset($dados['senha_usuario'])){ echo $dados['senha_usuario']; } ?>"><br><br>
+            <label>Senha</label>
+            <input type="password" name="senha_usuario" placeholder="Digite a senha" value="<?php if(isset($dados['senha_usuario'])){ echo $dados['senha_usuario']; } ?>"><br><br>
 
-        <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão-->
-    </form>
-
+            <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão-->
+        </form>
     <br><br>
-    Usuário: cesar@celke.com.br<br>
-    Senha: 123456
+    Usuário: giovanna<br>
+    Senha: 21
 </body>
 
 </html>
