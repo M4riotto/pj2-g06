@@ -1,5 +1,5 @@
 <?php
-    require ('database/database-evento.php'); 
+    require ('database/database.php'); 
     //Require() : a função require() importa arquivos, porém, caso o mesmo não seja encontrado, será levantado uma exceção e a execução é finalizada. Essa é uma maneira de interrompermos a execução dos scripts caso alguma anomalia ocorra.
 
     $nome = $_POST["nome"]; //name do input
@@ -9,8 +9,8 @@
     $capa = $_POST["capa"];
 
     try {
-        $stmt = $connect->prepare("INSERT INTO eventos (nome, capa, descricao, dia, horario)
-        VALUES (:nome, :capa, :descricao, :dia, :horario)");
+        $stmt = $connect->prepare("INSERT INTO eventos (nome, descricao, dia, horario, capa)
+        VALUES (:nome, :descricao, :dia, :horario, :capa)");
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':descricao', $descricao);
         $stmt->bindParam(':dia', $dia);

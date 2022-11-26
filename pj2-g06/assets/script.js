@@ -35,6 +35,20 @@ async function insertEventos(event) {
     }
 }
 
+async function insertCadastro(event) {
+    event.preventDefault() //tira a forma padrão.
+    const formData = new FormData(event.target)
+    const response = await fetch('../pj2-g06/backend/insertCadastro.php', {
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if (result?.success) {
+        alert('Seu Cadastro foi efetuado com sucesso!');
+        loadEventos();
+    }
+}
+
 async function loadEventos() {
     const response = await fetch('backend/list-eventos.php')
     const result = await response.json()

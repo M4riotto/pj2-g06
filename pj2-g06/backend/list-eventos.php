@@ -1,6 +1,6 @@
 
 <?php
-    require ('database/database-evento.php'); 
+    require ('database/database.php'); 
     //Require() : a função require() importa arquivos, porém, caso o mesmo não seja encontrado, será levantado uma exceção e a execução é finalizada. Essa é uma maneira de interrompermos a execução dos scripts caso alguma anomalia ocorra.
 
     try {

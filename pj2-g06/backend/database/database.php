@@ -2,12 +2,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'controle';
-
-// $servername = 'mysql.hostinger.com.br';
-// $username = 'u455152201_pi';
-// $password = '&YrlRt#0l';
-// $database = 'u455152201_pi';
+$database = 'cdevent';
 
 try {
     $connect = new PDO("mysql:host=$servername; dbname=$database", $username, $password);

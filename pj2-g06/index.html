@@ -60,7 +60,7 @@
         </div><!-- #navbarsite  -->
 
         <div class="sigin ml-2">
-          <a href="login/login.php"><button class="sign-in">Entrar</button></a>
+          <a href="backend/index.php"><button class="sign-in">Entrar</button></a>
           <button class="sign-up" onclick="showModal('#modal-cadastrar')">Cadastrar-se</button>
         </div> <!-- .sigin -->
       </div><!-- .container -->
@@ -172,15 +172,11 @@
   <div class="modal" id="modal-cadastrar" onclick="hideModal('#modal-cadastrar', event)">
     <div class="modal-body">
         <h1>Cadastro</h1>
-        <form onsubmit="insert(event)">
-            <label for="title">Nome:</label>
-            <input type="text" name="title">
-            <label for="Description">Email:</label>
-            <input type="text" name="description">
-            <label for="category">CPF:</label>
-            <input type="text" name="category">
-            <label for="Cover">Senha:</label>
-            <input type="text" name="cover">
+        <form onsubmit="insertCadastro(event)">
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario">
+            <label for="senha">Senha:</label>
+            <input type="text" name="senha">
             <button type="submit" onclick="closeAllModal()">Cadastrar</button>
         </form>
     </div>
