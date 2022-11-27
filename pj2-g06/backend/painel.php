@@ -64,8 +64,9 @@
 
     <div class="caixa">
     <form onsubmit="insertEventos(event)">
-        <h2>Cadastrar Evento</h2>
-
+        <h2>Cadastrar Evento</h2><br>
+        <div id="paragraf"></div><br>
+        
         <label for="POST-name">Nome:</label>
         <input id="POST-name" type="text" name="nome"><br>
 
@@ -138,7 +139,7 @@
         <label for="POST-name">Descrição:</label><br>
         <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea><br>
         
-        <input type="submit" value="Enviar">          
+        <input id="enviar" type="submit" value="Cadastrar" onclick="botoes()">   
     </form>
     </div>
     <script src="../assets/script.js"></script>
