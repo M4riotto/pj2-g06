@@ -109,7 +109,7 @@ header{
     margin: 15px 0 0 0;
 }
 
-.modal .modal-body form input[type=text]{
+.modal .modal-body form input[type=text],[type=email],[type=cpf],[type=date]{
     height: 30px;
     padding: 3px 5px;
     border-radius: 10px;

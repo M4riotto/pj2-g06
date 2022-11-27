@@ -12,8 +12,74 @@
     <title>lOGIN</title>
 </head>
 
+<style>
+    html,body{
+        height: 100%;
+    }
+    body{
+        max-width: 400px;
+        padding: 0;
+        margin: 0 auto !important;
+        background: cadetblue;
+    }
+    #wrapper{
+        height: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        background-color: #e5e5e5fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 10px 5px 5px black;
+    }
+    .erro{
+        display:flex;  
+        flex-direction:column;    
+        align-items: center;       
+    }
+    #login{
+        display:flex;       
+        justify-content: center;
+    }
+    #login label{
+        font-size:20px;
+        weight:bolder;
+    }
+    form{
+        padding:30px;
+    }
+    form > input[type=text],input[type=password]{
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #c7c7c794;
+    }
+    form > div > input[type=submit],input[type=button]{
+        border: none;
+        border-radius: 5px;
+        font-size: 25px;
+        display: flex;
+        width: 100%;
+        background-color: #009affcc;
+        justify-content: center;
+        height: 35px;
+        
+    }
+    form > div > input[type=submit]:hover,input[type=button]:hover{
+        background-color: #007affcc;
+    }
+    form > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+</style>
+
 <body>
-    <h1>Login</h1>
+
 
     <?php
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);//filter = receber todos os dados do form em um array (método   que esta usando, receber os dados como string)
@@ -39,26 +105,44 @@
                     $_SESSION['nome'] = $row_usuario['nome'];//passando o id e o nome para a variavel global com a informação   que vem do BDD 
                     header("Location: painel.php");//se tudo der certo, redirecionar para essa pagina
                 }else{
-                    $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Usuário ou senha inválida!</p>";
+                    $_SESSION['msg'] = "<span style='color: #ff0000'>Erro: Usuário ou senha inválida!</span>";
                 }
             }else{
-                $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Usuário ou senha inválida!</p>";
+                $_SESSION['msg'] = "<span style='color: #ff0000'>Erro: Usuário ou senha inválida!</span>";
             }   
         }
-    
-        if(isset($_SESSION['msg'])){//isset = existir
-            echo $_SESSION['msg'];
-            unset($_SESSION['msg']);//destrua apenas essa 
-        }
     ?>
-
-    <form method="POST" action="">     
-        <label>Usuário:</label>
-        <input type="text" name="usuario" placeholder="Digite o usuário" value="<?php if(isset($dados['usuario'])){echo $dados['usuario']; } ?>"><br><br> <!--mantendo o que o cara digitou caso ele erre algo-->
-        <label>Senha:</label>
-        <input type="password" name="senha_usuario" placeholder="Digite a senha" value="<?php if(isset($dado['senha_usuario'])){ echo $dados['senha_usuario']; } ?>"> <br><br>
-        
-        <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão-->
-    </form> <br><br>
+    <div id="wrapper">
+        <div class="container">
+            <div class="erro">
+                <h1>Tela de login</h1>
+                <?php
+                if(isset($_SESSION['msg'])){//isset = existir
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);//destrua apenas essa 
+                }?>
+            </div>
+                <div id="login">
+                    <form method="POST" action="">     
+                        <label>Usuário:</label>
+                        <input type="text" name="usuario" placeholder="Digite o usuário" value="<?php if(isset($dados['usuario'])){echo $dados['usuario']; } ?>"><br><br> <!--mantendo o que o cara digitou caso ele erre algo-->
+                        <label>Senha:</label>
+                        <input type="password" name="senha_usuario" placeholder="Digite a senha" value="<?php if(isset($dado['senha_usuario'])){ echo $dados['senha_usuario']; } ?>"> <br><br>
+                        
+                        <div>
+                            <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão--><br/>
+                           <input type="button" value="Voltar" name="voltar" onclick="voltarpagina()">
+                        </div>
+                        
+                    </form> <br><br>     
+                </div>
+            </div>
+    </div>
+    
 </body>
+<script>
+    function voltarpagina(){
+        window.location.replace('../index.html')
+    }
+</script>
 </html>
