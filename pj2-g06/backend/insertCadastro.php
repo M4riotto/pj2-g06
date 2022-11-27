@@ -27,7 +27,6 @@
 
         header('Content-Type: text/json'); //para ser enviado no formato json.
         echo json_encode($result); //exibir o resultado.
-
     } catch (PDOException $erro) {
         echo "connect failed: " . $erro->getMessage();
     }
