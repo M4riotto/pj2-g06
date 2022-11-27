@@ -15,7 +15,6 @@
 
         header('Content-Type: Text/json'); //para ser enviado no formato json.
         echo json_encode($result); //exibir o resultado.
-
     } catch (PDOException $erro) {
         echo "falha ao cadastrar" . $erro->getMessage();
     }
