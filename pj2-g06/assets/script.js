@@ -44,7 +44,7 @@ async function insertCadastro(event) {
     })
     const result = await response.json()
     if (result?.success) {
-        alert('Seu Cadastro foi efetuado com sucesso!');
+        alert('Seu cadastro foi efetuado com sucesso!');
         loadEventos();
     }
 }
@@ -65,21 +65,24 @@ async function loadEventos() {
                         <div class="card-body">
                             <h5 class="card-title">${eventos.nome}</h5>
                             <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
                             </div>
                             <ul class="list-group">
-                                <li class="list-group-item">DIA: ${eventos.dia}</li>
-                                <li class="list-group-item">horario: ${eventos.horario}</li>
+                                <li class="list-group-item">Dia: ${eventos.dia}</li>
+                                <li class="list-group-item">Horário: ${eventos.horario}</li>
+                                <li class="list-group-item">Local: ${eventos.endereco}</li>
+                                <li class="list-group-item">Município: ${eventos.municipio}</li>
+                                <li class="list-group-item">UF: ${eventos.uf}</li>
                             </ul>
                             <div class="card-body p-2">
+                                <p>Limite de pessoas: ${eventos.limiteP}</p>
                                 <a href="#" class="card-link">SEPARAR VAGA</a>
-                                <a href="#" class="card-link">Detalhes..</a>
                             </div>
                             <div class="card-footer text-right card-rodape-empresa text-muted">EMPRESA QUE ESTÁ FAZENDO O EVENTO
                             </div>
                           </div><!--card-->
                         </div><!--col do car--> `              
         })
-
     }else{
         alert('Erro ao cadastrar a função')
     }       
