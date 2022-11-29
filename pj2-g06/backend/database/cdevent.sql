@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Nov-2022 às 03:05
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 29-Nov-2022 às 17:20
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,7 +58,11 @@ INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`, `mun
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
+  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dataNascimento` date NOT NULL,
   `nome` varchar(220) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sexo` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
   `usuario` varchar(220) CHARACTER SET utf8 NOT NULL,
   `senha_usuario` varchar(250) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -67,18 +71,13 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha_usuario`) VALUES
-(2, 'Xoxo', 'giovanna', '$2y$10$dK/QXFd6u1DPBxL11IKbNec0.Jbc8/1p.tlw6gwI1Q75sWacb2WAW');
+INSERT INTO `usuarios` (`id`, `cpf`, `dataNascimento`, `nome`, `email`, `sexo`, `usuario`, `senha_usuario`) VALUES
+(8, '490.401.288-71', '2003-07-18', 'Vitor', 'vitormariotto03@gmail.com', 'M', 'vitor', '$2y$10$DpkFTj6mWvC0DMHAfKmEEu44zsLdhxg5VQfqFIP0E20pslpcirfDS'),
+(12, '490.401.288-71', '2022-11-08', 'cassio', 'fulltimenetworkingfotos@gmail.com', 'M', 'cassiomoreira', '$2y$10$do03tSTUFMnEG2SP8gM9sOXokd3y.fZwn6vly3roHvjU76TxPiW7O');
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices para tabela `eventos`
---
-ALTER TABLE `eventos`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `usuarios`
@@ -91,16 +90,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `eventos`
---
-ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
---
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
