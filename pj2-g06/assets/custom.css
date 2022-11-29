@@ -40,10 +40,10 @@ header{
 }
 
 /* Div com os botões categoria e ver tudo alinhados */
-.botoes_categoria{
+/* .botoes_categoria{
     display: flex;
     justify-content: space-between;
-}
+} */
   
 /* Alinhamento das bolinhas de categorias*/
 .cat{
@@ -74,9 +74,9 @@ header{
     width: 350px;
 }
 
-#festas{
+#festas, #palestras, #halloween, #standUP, #workshops{
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 /*modal*/

@@ -54,6 +54,10 @@
         display: flex;
         justify-content: space-between;
     }
+    .p1, #numero, #cx {
+        text-align:center;
+        color: red;
+    }
 </style>
 
 <body >
@@ -65,8 +69,9 @@
     <div class="caixa">
     <form onsubmit="insertEventos(event)">
         <h2>Cadastrar Evento</h2><br>
-        <div id="paragraf"></div><br>
-        
+        <p class="p1">Cadastre o <span id="numero">1</span>º evento</p>
+        <p class="p1" id="cx"></p>
+          
         <label for="POST-name">Nome:</label>
         <input id="POST-name" type="text" name="nome"><br>
 

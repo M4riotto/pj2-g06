@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2022 às 20:25
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 29-Nov-2022 às 03:05
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,15 +33,22 @@ CREATE TABLE `eventos` (
   `descricao` varchar(300) NOT NULL,
   `dia` varchar(11) NOT NULL,
   `horario` varchar(11) NOT NULL,
-  `capa` varchar(300) NOT NULL
+  `capa` varchar(300) NOT NULL,
+  `municipio` varchar(50) NOT NULL,
+  `uf` varchar(2) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
+  `limiteP` int(11) NOT NULL,
+  `categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`) VALUES
-(24, 'LIONS', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eum voluptatibus eaque fugiat. Assumenda asperiores,', '10-01-2023', '20:30hs', 'https://c0.wallpaperflare.com/preview/142/668/835/king-lion-the-lion-king-crown.jpg');
+INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`, `municipio`, `uf`, `endereco`, `limiteP`, `categoria`) VALUES
+(24, 'LIONS', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eum voluptatibus eaque fugiat. Assumenda asperiores,', '10-01-2023', '20:30hs', 'https://c0.wallpaperflare.com/preview/142/668/835/king-lion-the-lion-king-crown.jpg', '', '', '', 0, ''),
+(27, 'Coach do Amor', 'ffhahsfa skdjkas sajdha asdhias', '2023-02-21', '21:22', 'https://blog.emania.com.br/wp-content/uploads/2015/11/lua-de-mel-2.jpg', 'Caraguatatuba', 'SP', 'Av. Marechal - Nº305', 12, 'festas'),
+(30, 'Giovanna Siqueira Nicolau ', '1211sfa fsedfv rgdfs dfg dfgdf ertwersAWEADFS RS RT', '', '', 'https://blog.emania.com.br/wp-content/uploads/2015/11/lua-de-mel-2.jpg', 'Caraguatatuba', 'RJ', 'Av. Marechal - Nº305', 122, 'palestras');
 
 -- --------------------------------------------------------
 
@@ -51,11 +58,7 @@ INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`) VALU
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dataNascimento` date NOT NULL,
   `nome` varchar(220) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sexo` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
   `usuario` varchar(220) CHARACTER SET utf8 NOT NULL,
   `senha_usuario` varchar(250) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -64,9 +67,8 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `cpf`, `dataNascimento`, `nome`, `email`, `sexo`, `usuario`, `senha_usuario`) VALUES
-(8, '490.401.288-71', '2003-07-18', 'Vitor', 'vitormariotto03@gmail.com', 'M', 'vitor', '$2y$10$DpkFTj6mWvC0DMHAfKmEEu44zsLdhxg5VQfqFIP0E20pslpcirfDS'),
-(12, '490.401.288-71', '2022-11-08', 'cassio', 'fulltimenetworkingfotos@gmail.com', 'M', 'cassiomoreira', '$2y$10$do03tSTUFMnEG2SP8gM9sOXokd3y.fZwn6vly3roHvjU76TxPiW7O');
+INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha_usuario`) VALUES
+(2, 'Xoxo', 'giovanna', '$2y$10$dK/QXFd6u1DPBxL11IKbNec0.Jbc8/1p.tlw6gwI1Q75sWacb2WAW');
 
 --
 -- Índices para tabelas despejadas
@@ -92,13 +94,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

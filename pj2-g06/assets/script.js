@@ -59,11 +59,20 @@ async function loadEventos() {
     const result = await response.json()
     if (result?.success) {
         const listaClientes = document.querySelector('#festas')
+        const listaClientes2 = document.querySelector('#palestras')
+        const listaClientes3 = document.querySelector('#halloween')
+        const listaClientes4 = document.querySelector('#standUP')
+        const listaClientes5 = document.querySelector('#workshops')
         listaClientes.innerHTML = ''
+        listaClientes2.innerHTML = ''
+        listaClientes3.innerHTML = ''
+        listaClientes4.innerHTML = ''
+        listaClientes5.innerHTML = ''
         const clientes = result.data
         clientes.map((eventos) => {
-            listaClientes.innerHTML += `
-                <div class="col-sm-3 col-lg-3">
+            if (result.data.categoria === 'festas') {
+                listaClientes.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
                     <div class="card">
                         <div class="card-header col text-center p-2">Evento</div>
                         <img src="${eventos.capa}" class="card-img-top">
@@ -88,7 +97,37 @@ async function loadEventos() {
                         </div>
                     </div><!--card-->
                 </div><!--col do car--> 
-            `              
+            `  
+            console.log('teste');         
+            } else if (result.data.categoria === 'palestras') {
+                listaClientes2.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                            <p>Limite de pessoas: ${eventos.limiteP}</p>
+                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            }
         })
     }else{
         alert('Erro ao cadastrar a função')
@@ -96,14 +135,22 @@ async function loadEventos() {
 }
 
 function botoes(){
-    var div = document.getElementById('paragraf')
-    var paragraf = document.createElement('p')
-    var num = 2;
-    do {
-        var numero = 0;
-        numero = parseFloat(numero) + parseFloat(num);
-        paragraf.innerText='Cadastre o ' + numero + 'º evento';
-        num++;
-        div.appendChild(paragraf);
-    } while (num >= 5);    
-}
+    var paragraf = document.getElementById('numero');
+    var num = parseFloat(paragraf.textContent) + 1;
+    if (num == 2) {
+        paragraf.textContent = num;
+    }
+    else if (num == 3) {
+        paragraf.textContent = num;
+    }
+    else if (num == 4) {
+        paragraf.textContent = num;
+    } else if (num == 5) {
+        var texto = document.getElementById('cx');
+        paragraf.textContent = num;
+        texto.textContent = "Seu limite de cadastro acabou, só é permitido cinco :(";
+    } else if (num > 5) {
+        window.location.href = "../index.html";
+    }
+}   
+   
