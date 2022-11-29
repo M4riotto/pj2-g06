@@ -70,7 +70,7 @@ async function loadEventos() {
         listaClientes5.innerHTML = ''
         const clientes = result.data
         clientes.map((eventos) => {
-            if (result.data.categoria === 'festas') {
+            if (eventos.categoria === 'festas') {
                 listaClientes.innerHTML += `
                 <div class="col-sm-3 col-lg-4">
                     <div class="card">
@@ -97,10 +97,93 @@ async function loadEventos() {
                         </div>
                     </div><!--card-->
                 </div><!--col do car--> 
-            `  
-            console.log('teste');         
-            } else if (result.data.categoria === 'palestras') {
+            `        
+            } else if (eventos.categoria === 'palestras') {
                 listaClientes2.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                            <p>Limite de pessoas: ${eventos.limiteP}</p>
+                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            } else if (eventos.categoria === 'halloween') {
+                listaClientes3.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                            <p>Limite de pessoas: ${eventos.limiteP}</p>
+                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            } else if (eventos.categoria === 'standUP') {
+                listaClientes4.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                            <p>Limite de pessoas: ${eventos.limiteP}</p>
+                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            } else {
+                listaClientes5.innerHTML += `
                 <div class="col-sm-3 col-lg-4">
                     <div class="card">
                         <div class="card-header col text-center p-2">Evento</div>
@@ -133,6 +216,29 @@ async function loadEventos() {
         alert('Erro ao cadastrar a função')
     }       
 }
+
+// function clearFormEvento(idModal) {
+//     const nome = document.querySelector(`${idModal} input [name=nome]`)
+//     nome.value=''
+//     const capa = document.querySelector(`${idModal} input [name=capa]`)
+//     capa.value=''
+//     const categoria = document.querySelector(`${idModal} select [name=categoria]`)
+//     categoria.value=''
+//     const limiteP = document.querySelector(`${idModal} input [name=limiteP]`)
+//     limiteP.value=''
+//     const dia = document.querySelector(`${idModal} input [name=dia]`)
+//     dia.value=''
+//     const horario = document.querySelector(`${idModal} input [name=horario]`)
+//     horario.value=''
+//     const endereco = document.querySelector(`${idModal} input [name=endereco]`)
+//     endereco.value=''
+//     const municipio = document.querySelector(`${idModal} input [name=municipio]`)
+//     municipio.value=''
+//     const uf = document.querySelector(`${idModal} select [name=uf]`)
+//     uf.value=''
+//     const descricao = document.querySelector(`${idModal} textarea [name=descricao]`)
+//     descricao.value=''
+// }
 
 function botoes(){
     var paragraf = document.getElementById('numero');
