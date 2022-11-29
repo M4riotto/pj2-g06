@@ -85,7 +85,7 @@
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);//filter = receber todos os dados do form em um array (método   que esta usando, receber os dados como string)
     
         if (!empty($dados['SendLogin'])) { //empty = vazio || só acessa esse if qnd o usuario clicar no botao
-            $query_usuario = "SELECT id, nome, usuario, senha_usuario 
+            $query_usuario = "SELECT id, nome, email, usuario, senha_usuario 
                               FROM usuarios 
                               WHERE usuario = :usuario  
                               LIMIT 1"; //salvando esse texto na variavel

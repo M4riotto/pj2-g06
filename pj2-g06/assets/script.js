@@ -89,8 +89,8 @@ async function loadEventos() {
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
                         <div class="card-body p-2">
-                            <p>Limite de pessoas: ${eventos.limiteP}</p>
-                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                            <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                            <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
@@ -117,8 +117,8 @@ async function loadEventos() {
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
                         <div class="card-body p-2">
-                            <p>Limite de pessoas: ${eventos.limiteP}</p>
-                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
@@ -145,8 +145,8 @@ async function loadEventos() {
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
                         <div class="card-body p-2">
-                            <p>Limite de pessoas: ${eventos.limiteP}</p>
-                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
@@ -173,8 +173,8 @@ async function loadEventos() {
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
                         <div class="card-body p-2">
-                            <p>Limite de pessoas: ${eventos.limiteP}</p>
-                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
@@ -201,8 +201,8 @@ async function loadEventos() {
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
                         <div class="card-body p-2">
-                            <p>Limite de pessoas: ${eventos.limiteP}</p>
-                            <a href="#" class="card-link">SEPARAR VAGA</a>
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
@@ -258,5 +258,175 @@ function botoes(){
     } else if (num > 5) {
         window.location.href = "../index.html";
     }
-}   
+}  
+
+function limiteP() {
+    var paragraf = document.querySelector('.limiteP');
+    var num = parseFloat(paragraf.textContent) - 1;
+    paragraf.textContent = num;
+}
+
+//FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
+async function loadEventosPainel() {
+    const response = await fetch('list-eventos.php')
+    const result = await response.json()
+    if (result?.success) {
+        const listaClientes = document.querySelector('#festas')
+        const listaClientes2 = document.querySelector('#palestras')
+        const listaClientes3 = document.querySelector('#halloween')
+        const listaClientes4 = document.querySelector('#standUP')
+        const listaClientes5 = document.querySelector('#workshops')
+        listaClientes.innerHTML = ''
+        listaClientes2.innerHTML = ''
+        listaClientes3.innerHTML = ''
+        listaClientes4.innerHTML = ''
+        listaClientes5.innerHTML = ''
+        const clientes = result.data
+        clientes.map((eventos) => {
+            if (eventos.categoria === 'festas') {
+                listaClientes.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                            <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                            <button onclick="limiteP()">SEPARAR VAGA</button>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            `        
+            } else if (eventos.categoria === 'palestras') {
+                listaClientes2.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            } else if (eventos.categoria === 'halloween') {
+                listaClientes3.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            } else if (eventos.categoria === 'standUP') {
+                listaClientes4.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            } else {
+                listaClientes5.innerHTML += `
+                <div class="col-sm-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header col text-center p-2">Evento</div>
+                        <img src="${eventos.capa}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${eventos.nome}</h5>
+                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                            <p>${eventos.categoria}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                        </ul>
+                        <div class="card-body p-2">
+                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button onclick="limiteP()">SEPARAR VAGA</button>
+                        </div>
+                        <div class="card-footer text-right card-rodape-empresa text-muted">
+                            EMPRESA QUE ESTÁ FAZENDO O EVENTO
+                        </div>
+                    </div><!--card-->
+                </div><!--col do car--> 
+            ` 
+            }
+        })
+    }else{
+        alert('Erro ao cadastrar a função')
+    }       
+}
    
