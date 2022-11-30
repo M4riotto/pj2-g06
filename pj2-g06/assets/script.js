@@ -90,7 +90,7 @@ async function loadEventos() {
                         </ul>
                         <div class="card-body p-2">
                             <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                            <button onclick="limiteP()">SEPARAR VAGA</button>
+                            <button onclick="limiteP(this)">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
@@ -262,8 +262,18 @@ function botoes(){
 
 function limiteP() {
     var paragraf = document.querySelector('.limiteP');
+    var btn = document.getElementById('btn'); 
     var num = parseFloat(paragraf.textContent) - 1;
+    paragraf.textContent = '' ;
+    var text = String(paragraf.textContent) + 'Acabou as vagas';
+
     paragraf.textContent = num;
+    
+    if (num == 0) {
+        paragraf.textContent = text;
+        paragraf.style.color="red";  
+        btn.style.display="none";       
+    }
 }
 
 //FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
@@ -303,7 +313,7 @@ async function loadEventosPainel() {
                         </ul>
                         <div class="card-body p-2">
                             <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                            <button onclick="limiteP()">SEPARAR VAGA</button>
+                            <button  id="btn" onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO

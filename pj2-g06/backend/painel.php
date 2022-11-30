@@ -58,6 +58,10 @@
         text-align:center;
         color: red;
     }
+
+    .vermelho{
+        color:red;
+    }
 </style>
 
 <body >
