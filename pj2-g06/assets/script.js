@@ -1,12 +1,12 @@
 //ABRIR O MODAL CADASTRAR-SE
-function showModal(idModal){ 
+function showModalCadastrar(idModal){ 
     //IDMODAL: é usado para avisar que há um parâmetro lá no html, o texto pode ser qualquer coisa avisando que o parâmetro será um texto.
     const modal = document.querySelector(idModal)
     modal.style.display = "flex"
 }
 
 //ESCONDER O MODAL/OCULTAR A DIV DO MODAL
-function hideModal(idModal, event) {
+function hideModalCadastrar(idModal, event) {
     if(event.target.className === 'modal'){
         const modal = document.querySelector(idModal)
         modal.style.display = 'none'
@@ -14,7 +14,7 @@ function hideModal(idModal, event) {
 }
 
 //FORÇAR O FECHAMENTO APÓS RECEBER A MSG DE ALERTA
-function closeAllModal() {
+function closeAllModalCadastrar() {
     const modais = document.querySelectorAll('.modal')
     modais.forEach(modal => {
         modal.style.display = 'none'
@@ -49,6 +49,21 @@ async function insertEventos(event) {
     const result = await response.json()
     if (result?.success) {
         alert('Seu evento '+result.data.nome+' foi cadastrado com sucesso!');
+        loadEventos();
+    }
+}
+
+async function insertParticipantes(event) {
+    //EVENT.PREVENTDEFAULT(): tira a forma padrão do carregamento, ou seja, o delay quando algo é adicionado na tela dando um flesh não acontecerá mais.
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const response = await fetch('../backend/insertParticipantes.php', {
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if (result?.success) {
+        alert('Participante '+result.data.nome+' cadastrado com sucesso!');
         loadEventos();
     }
 }
@@ -91,7 +106,43 @@ async function loadEventos() {
                         <div class="card-body p-2">
                             <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                             <button onclick="limiteP(this)">SEPARAR VAGA</button>
+
+                            <p>Participantes:</p>
+
+                            <!-- Botão que irá abrir o modal -->
+                            <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+
+                            <!-- Modal -->
+                            <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
+                                <div class="modal-dialog">
+                                    <!-- Conteúdo do modal-->
+                                    <div class="modal-content">
+
+                                        <!-- Cabeçalho do modal -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Participantes do evento ${eventos.nome}</h4>
+                                        </div>
+
+                                        <!-- Corpo do modal -->
+                                        <div class="modal-body col-12">
+                                            <tr>
+                                                <td>Nome:</td>
+                                                <td>Sexo:</td>
+                                                <td>Descrição:</td>
+                                            </tr>
+                                            <p>Palestrante/Artista: ${eventos.nome}</p>
+                                            <p>Sobre: ${eventos.descricao}</p>
+                                        </div>
+
+                                        <!-- Rodapé do modal-->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
                         </div>

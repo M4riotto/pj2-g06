@@ -79,8 +79,6 @@
 </style>
 
 <body>
-
-
     <?php
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);//filter = receber todos os dados do form em um array (método   que esta usando, receber os dados como string)
     
@@ -122,23 +120,21 @@
                     unset($_SESSION['msg']);//destrua apenas essa 
                 }?>
             </div>
-                <div id="login">
-                    <form method="POST" action="">     
-                        <label>Usuário:</label>
-                        <input type="text" name="usuario" placeholder="Digite o usuário" value="<?php if(isset($dados['usuario'])){echo $dados['usuario']; } ?>"><br><br> <!--mantendo o que o cara digitou caso ele erre algo-->
-                        <label>Senha:</label>
-                        <input type="password" name="senha_usuario" placeholder="Digite a senha" value="<?php if(isset($dado['senha_usuario'])){ echo $dados['senha_usuario']; } ?>"> <br><br>
+            <div id="login">
+                <form method="POST" action="">     
+                    <label>Usuário:</label>
+                    <input type="text" name="usuario" placeholder="Digite o usuário" value="<?php if(isset($dados['usuario'])){echo $dados['usuario']; } ?>"><br><br> <!--mantendo o que o cara digitou caso ele erre algo-->
+                    <label>Senha:</label>
+                    <input type="password" name="senha_usuario" placeholder="Digite a senha" value="<?php if(isset($dado['senha_usuario'])){ echo $dados['senha_usuario']; } ?>"> <br><br>
                         
-                        <div>
-                            <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão--><br/>
-                           <input type="button" value="Voltar" name="voltar" onclick="voltarpagina()">
-                        </div>
-                        
-                    </form> <br><br>     
-                </div>
+                    <div>
+                        <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão--><br/>
+                        <input type="button" value="Voltar" name="voltar" onclick="voltarpagina()">
+                    </div>
+                </form><br><br>     
             </div>
+        </div>
     </div>
-    
 </body>
 <script>
     function voltarpagina(){
