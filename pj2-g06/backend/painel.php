@@ -15,6 +15,7 @@
     <meta charset="UTF-8">
     <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico"> -->
     <title>PAINEL</title>
+    <link rel="stylesheet" href="../assets/custom.css">
 </head>
 
 <style>
@@ -57,9 +58,6 @@
     .p1, #numero, #cx {
         text-align:center;
         color: red;
-    }
-    .vermelho{
-        color:red;
     }
 </style>
 
@@ -176,6 +174,28 @@
             <input id="cadastrar" type="submit" value="Cadastrar">
         </form>
     </div>
+
+    <div class="caixa3">
+        <label>Pague R$5,00 para cadastrar uma a capa do seu evento em nosso Slide principal por 1 dia</label>
+        <a href="#"><input type="button" value="Pagar" id="pagar" onclick="imagem_slide()"></a>
+        <button id="cadastrar-img" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')">Clique aqui e Cadastre</button>       
+    </div>
+
+    <!--modal cadastrar-->
+  <div class="modal" id="modal-cadastrarIMG" onclick="hideModalCadastrar('#modal-cadastrarIMG', event)">
+    <div class="modal-body">
+        <h1>Cadastrar imagem</h1>
+        <form onsubmit="insertSlide(event)">
+          <label for="capa">Capa:</label>
+          <input type="text" name="capa" required placeholder="Cole link de imagem">
+          <label for="titulo">Titulo do evento:</label>
+          <input type="text" name="titulo" placeholder="Um titulo de até 20 letras">
+          <label for="descricao">Descrição:</label>
+          <input type="text" name="descricao" placeholder="Uma descrição de até 50 letras">          
+          <button type="submit" onclick="closeAllModalCadastrar()">Cadastrar</button>
+        </form>
+    </div>
+</div>
 
     <script src="../assets/script.js"></script>
 </body>

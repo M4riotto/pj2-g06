@@ -68,6 +68,42 @@ async function insertParticipantes(event) {
     }
 }
 
+async function insertSlide(event) {
+    //EVENT.PREVENTDEFAULT(): tira a forma padrão do carregamento, ou seja, o delay quando algo é adicionado na tela dando um flesh não acontecerá mais.
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const response = await fetch('../backend/insertSlide.php', {
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if (result?.success) {
+        alert('Sua imagem do evento '+ result.data.titulo+' foi cadastrada com sucesso!');
+        loadEventos();
+    }
+}
+
+async function loadSlide() {
+    const response = await fetch('backend/list_slide.php')
+    const result = await response.json()
+    if (result?.success) {
+        const slide = document.querySelector('#carrossel')
+        slide.innerHTML = '';
+        const divSlide = result.data
+        divSlide.map((fotos) => {
+            slide.innerHTML += `<div class="carousel-item">
+            <img src="${fotos.capa}" alt="" class="img-fluid d-block">
+            <div class="carousel-caption d-none d-block">
+              <h3>${fotos.titulo}</h3>
+              <p class="d-none d-sm-block">${fotos.descricao}</p>
+            </div>
+          </div>`
+        })
+    }else{
+        alert('Erro ao cadastrar a imagem')
+    }  //if
+}//funcao;
+
 //FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
 async function loadEventos() {
     const response = await fetch('backend/listar-ev-par.php')
@@ -673,5 +709,12 @@ async function loadEventosPainel() {
     }else{
         alert('Erro ao cadastrar a função')
     }       
+}
+
+function imagem_slide() {
+    var pagar = document.querySelector('#pagar');
+    document.querySelector('#cadastrar-img').disabled = false;
+
+    pagar.style.display="none";
 }
    
