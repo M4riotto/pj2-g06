@@ -103,9 +103,9 @@ COMMIT;
 CREATE TABLE `participantes` (
   `id` int(11) NOT NULL,
   `cpf` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `nomeP` varchar(100) NOT NULL,
   `sexo` varchar(1) NOT NULL,
-  `descricao` varchar(500) NOT NULL
+  `descricaoP` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
