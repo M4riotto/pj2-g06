@@ -70,7 +70,7 @@ async function insertParticipantes(event) {
 
 //FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
 async function loadEventos() {
-    const response = await fetch('backend/list-eventos.php')
+    const response = await fetch('backend/listar-ev-par.php')
     const result = await response.json()
     if (result?.success) {
         const listaClientes = document.querySelector('#festas')
@@ -120,7 +120,7 @@ async function loadEventos() {
 
                                         <!-- Cabeçalho do modal -->
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Participantes do evento ${eventos.nome}</h4>
+                                            <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
                                         </div>
 
                                         <!-- Corpo do modal -->
@@ -130,8 +130,8 @@ async function loadEventos() {
                                                 <td>Sexo:</td>
                                                 <td>Descrição:</td>
                                             </tr>
-                                            <p>Palestrante/Artista: ${eventos.nome}</p>
-                                            <p>Sobre: ${eventos.descricao}</p>
+                                            <p>Palestrante/Artista: ${eventos.nomeP}</p>
+                                            <p>Sobre: ${eventos.descricaoP}</p>
                                         </div>
 
                                         <!-- Rodapé do modal-->
@@ -329,7 +329,7 @@ function limiteP() {
 
 //FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
 async function loadEventosPainel() {
-    const response = await fetch('list-eventos.php')
+    const response = await fetch('list-ev-par.php')
     const result = await response.json()
     if (result?.success) {
         const listaClientes = document.querySelector('#festas')

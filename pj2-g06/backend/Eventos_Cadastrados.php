@@ -200,7 +200,7 @@
     
 
   <!--modal cadastrar-->
-  <div class="modal" id="modal-cadastrar" onclick="hideModal('#modal-cadastrar', event)">
+  <div class="modal" id="modal-cadastrar" onclick="hideModalCadastrar('#modal-cadastrar', event)">
     <div class="modal-body">
         <h1>Cadastro</h1>
         <form onsubmit="insertCadastro(event)">
@@ -225,7 +225,7 @@
           <label for="senha">Senha:</label>
           <input type="text" name="senha">
             
-          <button type="submit" onclick="closeAllModal()">Cadastrar</button>
+          <button type="submit" onclick="closeAllModalCadastrat()">Cadastrar</button>
         </form>
     </div>
 </div>

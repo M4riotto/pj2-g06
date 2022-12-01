@@ -160,7 +160,7 @@
             <input type="text" id="POST-name" name="cpf"><br>
 
             <label for="POST-name">Nome:</label>
-            <input type="text" id="POST-name" name="nome"><br>
+            <input type="text" id="POST-name" name="nomeP"><br>
 
             <label for="POST-name">Sexo:</label>
             <select name="sexo" id="POST-name">
@@ -171,7 +171,7 @@
             </select><br>
 
             <label for="POST-name">Descrição:</label>
-            <textarea name="descricao" id="POST-name" cols="30" rows="10"></textarea><br>
+            <textarea name="descricaoP" id="POST-name" cols="30" rows="10"></textarea><br>
 
             <input id="cadastrar" type="submit" value="Cadastrar">
         </form>
