@@ -148,7 +148,7 @@
             <label for="POST-name">Descrição:</label><br>
             <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea><br>
 
-            <input id="enviar" type="submit" value="Cadastrar" onclick="botoes()">   
+            <input id="enviar" type="submit" value="Cadastrar" onclick="botoes();">   
         </form>
     </div> <br><br>
 

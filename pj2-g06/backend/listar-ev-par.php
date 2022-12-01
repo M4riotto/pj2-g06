@@ -3,7 +3,7 @@
     //Require() : a função require() importa arquivos, porém, caso o mesmo não seja encontrado, será levantado uma exceção e a execução é finalizada. Essa é uma maneira de interrompermos a execução dos scripts caso alguma anomalia ocorra.
 
     try {
-        $stmt = $connect->prepare("SELECT  ev.id, ev.nome, ev.capa, ev.categoria, ev.limiteP, ev.dia, ev.horario, ev.endereco, ev.municipio, ev.uf, ev.descricao, par.cpf, par.nomeP, par.sexo, par.descricaoP FROM eventos AS ev LEFT JOIN participantes AS par ON ev.id = par.id ORDER BY ev.dia DESC");
+        $stmt = $connect->prepare("SELECT  ev.id, ev.nome, ev.capa, ev.categoria, ev.limiteP, ev.dia, ev.horario, ev.endereco, ev.municipio, ev.uf, ev.descricao, par.nomeP, par.descricaoP FROM eventos AS ev INNER JOIN participantes AS par ON ev.id = par.id ORDER BY ev.dia DESC");
         $stmt->execute();
 
         $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
