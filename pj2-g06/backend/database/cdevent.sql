@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Nov-2022 às 17:20
+-- Tempo de geração: 02-Dez-2022 às 04:05
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -34,9 +34,9 @@ CREATE TABLE `eventos` (
   `dia` varchar(11) NOT NULL,
   `horario` varchar(11) NOT NULL,
   `capa` varchar(300) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
   `municipio` varchar(50) NOT NULL,
   `uf` varchar(2) NOT NULL,
-  `endereco` varchar(100) NOT NULL,
   `limiteP` int(11) NOT NULL,
   `categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -45,56 +45,31 @@ CREATE TABLE `eventos` (
 -- Extraindo dados da tabela `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`, `municipio`, `uf`, `endereco`, `limiteP`, `categoria`) VALUES
-(24, 'LIONS', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eum voluptatibus eaque fugiat. Assumenda asperiores,', '10-01-2023', '20:30hs', 'https://c0.wallpaperflare.com/preview/142/668/835/king-lion-the-lion-king-crown.jpg', '', '', '', 0, ''),
-(27, 'Coach do Amor', 'ffhahsfa skdjkas sajdha asdhias', '2023-02-21', '21:22', 'https://blog.emania.com.br/wp-content/uploads/2015/11/lua-de-mel-2.jpg', 'Caraguatatuba', 'SP', 'Av. Marechal - Nº305', 12, 'festas'),
-(30, 'Giovanna Siqueira Nicolau ', '1211sfa fsedfv rgdfs dfg dfgdf ertwersAWEADFS RS RT', '', '', 'https://blog.emania.com.br/wp-content/uploads/2015/11/lua-de-mel-2.jpg', 'Caraguatatuba', 'RJ', 'Av. Marechal - Nº305', 122, 'palestras');
+INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`, `endereco`, `municipio`, `uf`, `limiteP`, `categoria`) VALUES
+(1, 'VITOR GABRIEL MARIOTTO MOREIRA', 'sfqwf qw qr qwrqwrqw rrwqwr qwrqrqw wrqrqw', '2022-12-02', '00:57', 'https://wallpaperaccess.com/full/2461288.jpg', 'Rua AntÃ´nio pereira garcia, 117', 'caraguatatuba', 'RJ', 10, 'halloween');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura da tabela `foto`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `foto` (
   `id` int(11) NOT NULL,
-  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dataNascimento` date NOT NULL,
-  `nome` varchar(220) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sexo` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `usuario` varchar(220) CHARACTER SET utf8 NOT NULL,
-  `senha_usuario` varchar(250) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `capa` varchar(200) NOT NULL,
+  `titulo` varchar(20) NOT NULL,
+  `descricao` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Extraindo dados da tabela `foto`
 --
 
-INSERT INTO `usuarios` (`id`, `cpf`, `dataNascimento`, `nome`, `email`, `sexo`, `usuario`, `senha_usuario`) VALUES
-(8, '490.401.288-71', '2003-07-18', 'Vitor', 'vitormariotto03@gmail.com', 'M', 'vitor', '$2y$10$DpkFTj6mWvC0DMHAfKmEEu44zsLdhxg5VQfqFIP0E20pslpcirfDS'),
-(12, '490.401.288-71', '2022-11-08', 'cassio', 'fulltimenetworkingfotos@gmail.com', 'M', 'cassiomoreira', '$2y$10$do03tSTUFMnEG2SP8gM9sOXokd3y.fZwn6vly3roHvjU76TxPiW7O');
+INSERT INTO `foto` (`id`, `capa`, `titulo`, `descricao`) VALUES
+(3, 'https://wallpaperaccess.com/full/2461288.jpg', 'Evento tstet', 'Lorem ipsum dolor sit amet consectetur adipisicing'),
+(4, 'https://wallpapercave.com/wp/wp6415210.jpg', 'Evento tstetwdqdqdq', 'Lorem ipsum dolor sit amet consectetur adipisicing');
 
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-COMMIT;
+-- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `participantes`
@@ -109,8 +84,52 @@ CREATE TABLE `participantes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Extraindo dados da tabela `participantes`
+--
+
+INSERT INTO `participantes` (`id`, `cpf`, `nomeP`, `sexo`, `descricaoP`) VALUES
+(1, 490401, 'vitor', 'm', 'qwfqfqfgqwwgqvq');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dataNascimento` date NOT NULL,
+  `nome` varchar(220) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `sexo` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `usuario` varchar(220) CHARACTER SET utf8 NOT NULL,
+  `senha_usuario` varchar(250) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `cpf`, `dataNascimento`, `nome`, `email`, `sexo`, `usuario`, `senha_usuario`) VALUES
+(8, '490.401.288-71', '2003-07-18', 'Vitor', 'vitormariotto03@gmail.com', 'M', 'vitor', '$2y$10$DpkFTj6mWvC0DMHAfKmEEu44zsLdhxg5VQfqFIP0E20pslpcirfDS'),
+(13, '54105564889', '2004-01-10', 'Giovanna', 'siqueira.nicolau@ifsp.edu.br', 'F', 'giovanna', '$2y$10$E8eJj6lqMMx7JOdxo7gD7OWE/XPFjKN6EZeE2C6gK0QTUjCKy4yaO');
+
+--
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `foto`
+--
+ALTER TABLE `foto`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `participantes`
@@ -119,14 +138,38 @@ ALTER TABLE `participantes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `foto`
+--
+ALTER TABLE `foto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `participantes`
 --
 ALTER TABLE `participantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
