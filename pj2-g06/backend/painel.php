@@ -178,7 +178,7 @@
     <div class="caixa3">
         <label>Pague R$5,00 para cadastrar uma a capa do seu evento em nosso Slide principal por 1 dia</label>
         <a href="#"><input type="button" value="Pagar" id="pagar" onclick="imagem_slide()"></a>
-        <button id="cadastrar-img" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')">Clique aqui e Cadastre</button>       
+        <a href="#modal-cadastrarIMG"><button id="cadastrar-img" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')">Clique aqui e Cadastre</button>       </a>
     </div>
 
     <!--modal cadastrar-->

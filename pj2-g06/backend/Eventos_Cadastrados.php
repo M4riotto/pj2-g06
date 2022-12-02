@@ -29,7 +29,7 @@
   <header>
         <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
         <h2><a href="logout.php">Sair</a></h2>
-        <a href="Eventos_Cadastrados.php">Eventos cadastrados</a>
+        <a href="painel.php">Voltar para o cadastro</a>
     </header>
 
   <!--categorias-->
