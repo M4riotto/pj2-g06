@@ -7,7 +7,7 @@
     --color5: #3ecbff;
     
     --primary: #298519;
-    --secundary: #13645b;
+    --secundary: #319287;
     --secundary-dark: #034d45;
     --grey-0: #000;   
     --grey-200: #181818;
@@ -15,11 +15,10 @@
     --grey-600: #818181;
     --grey-800: #d3d3d3;
     --grey-1000:#fff;
-  
-  
+
     --color-primary-5: #56AB89;
-    --fundo: #90EFE2;
-    --nav: #3FCDB9;
+    --fundo: #d4fce3b9;
+    --categoria: #f8db7a;
     --color-primary-3: #2E795B;
     --color-primary-4: #0F3526;
 }
@@ -28,34 +27,68 @@
 body, html{
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--fundo);
 }
 
 header{
-    background-color: var(--secundary-dark);
+    background-color: #3eccff48;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-
 /*cor da navbar*/
 .bg-faded{
-    background-color: var(--nav);
+    background-color: #44b16eb9;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    color: black;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.active {
+    border-bottom: 2px solid black;
 }
 
 /* Div com os botões categoria e ver tudo alinhados */
-/* .botoes_categoria{
+.botoes_categoria{
     display: flex;
-    justify-content: space-between;
-} */
-  
-/* Alinhamento das bolinhas de categorias*/
+}
+
+.categoria {
+    background-color: var(--categoria);
+}
+
 .cat{
+    margin-top: 0;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+}
+
+h4.categoria {
+    margin-top: 15px;
+    border-left: 4px solid rgb(211, 180, 3);
+    padding: 5px;
+}
+
+.sign-in, .sign-up, .btn-light, .form-control {
+    border-radius: 12px;
+    background-color: var(--categoria);
+    border: 2px solid rgb(233, 166, 41);
+    padding: 3px 7px;
 }
 
 /*scroll*/
@@ -81,8 +114,34 @@ header{
 }
 
 #festas, #palestras, #halloween, #standUP, #workshops{
+    margin: 10px;
     display: flex;
     overflow-x: auto;
+    padding: 0;
+}
+
+.verMais{
+    font-size: 18px;
+    margin: 5px;
+    border:0;
+    border-radius: 15px;
+    background-color: #298519;
+    color: #000;
+    padding: 1px 10px;
+}
+
+.vaga {
+    margin: 5px;
+    font-size: 15px;
+    background-color: rgb(187, 27, 27);
+    border-radius: 15px;
+    border: 0;
+    padding: 0 10px;
+}
+
+h2{
+    margin-left: 10px;
+
 }
 
 /*modal*/

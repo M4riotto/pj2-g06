@@ -123,7 +123,7 @@ async function loadEventos() {
         clientes.map((eventos) => {
             if (eventos.categoria === 'festas') {
                 listaClientes.innerHTML += `
-                <div class="col-sm-3 col-lg-4">
+                <div class="ccol-sm-6 col-lg-3 col-md-4">
                     <div class="card">
                         <div class="card-header col text-center p-2">Evento</div>
                         <img src="${eventos.capa}" class="card-img-top">
@@ -142,12 +142,12 @@ async function loadEventos() {
                         <div class="card-body p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button onclick="limiteP(this)">Separar Vaga</button>
+                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center;"
                                 <p>Participantes:</p>
                                 <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
 
                                 <!-- Modal -->
                                 <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
@@ -195,7 +195,7 @@ async function loadEventos() {
             `        
             } else if (eventos.categoria === 'palestras') {
                 listaClientes2.innerHTML += `
-                <div class="col-sm-3 col-lg-4">
+                <div class="col-sm-6 col-lg-3 col-md-4">
                     <div class="card">
                         <div class="card-header col text-center p-2">Evento</div>
                         <img src="${eventos.capa}" class="card-img-top">
@@ -214,12 +214,12 @@ async function loadEventos() {
                         <div class="card-body p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button onclick="limiteP(this)">Separar Vaga</button>
+                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center;"
                                 <p>Participantes:</p>
                                 <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
 
                                 <!-- Modal -->
                                 <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
@@ -267,8 +267,8 @@ async function loadEventos() {
             ` 
             } else if (eventos.categoria === 'halloween') {
                 listaClientes3.innerHTML += `
-                <div class="col-sm-3 col-lg-4">
-                    <div class="card">
+                <div class="col-sm-6 col-lg-3 col-md-4">
+                    <div class="card justify-content-space-around">
                         <div class="card-header col text-center p-2">Evento</div>
                         <img src="${eventos.capa}" class="card-img-top">
                         <div class="card-body">
@@ -286,12 +286,12 @@ async function loadEventos() {
                         <div class="card-body p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button onclick="limiteP(this)">Separar Vaga</button>
+                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center;"
                                 <p>Participantes:</p>
                                 <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
 
                                 <!-- Modal -->
                                 <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
@@ -339,7 +339,7 @@ async function loadEventos() {
             ` 
             } else if (eventos.categoria === 'standUP') {
                 listaClientes4.innerHTML += `
-                <div class="col-sm-3 col-lg-4">
+                <div class="col-sm-6 col-lg-3 col-md-4">
                     <div class="card">
                         <div class="card-header col text-center p-2">Evento</div>
                         <img src="${eventos.capa}" class="card-img-top">
@@ -358,12 +358,12 @@ async function loadEventos() {
                         <div class="card-body p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button onclick="limiteP(this)">Separar Vaga</button>
+                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center;"
                                 <p>Participantes:</p>
                                 <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
 
                                 <!-- Modal -->
                                 <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
@@ -411,7 +411,7 @@ async function loadEventos() {
             ` 
             } else {
                 listaClientes5.innerHTML += `
-                <div class="col-sm-3 col-lg-4">
+                <div class="col-sm-6 col-lg-3 col-md-4">
                     <div class="card">
                         <div class="card-header col text-center p-2">Evento</div>
                         <img src="${eventos.capa}" class="card-img-top">
@@ -430,12 +430,12 @@ async function loadEventos() {
                         <div class="card-body p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button onclick="limiteP(this)">Separar Vaga</button>
+                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center;"
                                 <p>Participantes:</p>
                                 <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
 
                                 <!-- Modal -->
                                 <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
