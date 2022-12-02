@@ -1,5 +1,11 @@
 /*paleta de cores*/
 :root{
+    --color1: #ffbb9a;
+    --color2: #ffed6e;
+    --color3: #091fb4;
+    --color4: #0368f6;
+    --color5: #3ecbff;
+    
     --primary: #298519;
     --secundary: #13645b;
     --secundary-dark: #034d45;
