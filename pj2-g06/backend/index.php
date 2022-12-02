@@ -137,6 +137,7 @@
                     <div>
                         <input type="submit" value="Acessar" name="SendLogin"><!--sendLogin nome do botão--><br/>
                         <input type="button" value="Voltar" name="voltar" onclick="voltarpagina()">
+                        <a href="esqueceu_a_senha.php"><p>Esqueceu a senha</p></a>
                     </div>
                 </form><br><br>     
             </div>
