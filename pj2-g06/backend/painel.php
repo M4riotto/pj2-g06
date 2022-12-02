@@ -2,11 +2,7 @@
     session_start();
     ob_start();
     include_once 'database/database.php';
-
-    if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){//isset = existir
-        $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
-        header("Location: index.php");
-    }
+    require 'login/confirmacao_login.php';   
 ?>
 
 <!DOCTYPE html>
@@ -16,56 +12,14 @@
     <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico"> -->
     <title>PAINEL</title>
     <link rel="stylesheet" href="../assets/custom.css">
+    <link rel="stylesheet" href="../assets/custom_painel.css">
 </head>
-
-<style>
-    *{
-        margin:0;
-        padding:0;
-    }
-    span{
-        color: white;
-    }
-    header{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: green;
-        height: 80px;
-    }
-    h2{
-        text-align: center;
-    }
-    .caixa, .caixa2{
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    input[type=submit]{
-        width: 50%;
-        margin: auto;
-        border-radius: 20px;
-    }
-    .cx1{
-        display: flex;
-        justify-content: space-between;
-    }
-    .p1, #numero, #cx {
-        text-align:center;
-        color: red;
-    }
-</style>
 
 <body >
     <header>
         <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
         <h2><a href="logout.php">Sair</a></h2>
-        <a href="Eventos_Cadastrados.php">Eventos cadastrados</a>
+        <a href="Eventos_Cadastrados.php"><h2>Eventos Cadastrados</h2></a>
     </header>
 
     <div class="caixa">
@@ -149,7 +103,7 @@
             <input id="enviar" type="submit" value="Cadastrar" onclick="botoes();">   
         </form>
     </div> <br><br>
-
+<hr>
     <div class="caixa2">
         <form onsubmit="insertParticipantes(event)">
             <h2>Cadastrar Participantes</h2><br>
@@ -174,11 +128,11 @@
             <input id="cadastrar" type="submit" value="Cadastrar">
         </form>
     </div>
-
+<hr>
     <div class="caixa3">
         <label>Pague R$5,00 para cadastrar uma a capa do seu evento em nosso Slide principal por 1 dia</label>
-        <a href="#"><input type="button" value="Pagar" id="pagar" onclick="imagem_slide()"></a>
-        <a href="#modal-cadastrarIMG"><button id="cadastrar-img" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')">Clique aqui e Cadastre</button>       </a>
+        <input type="button" value="Pagar" id="pagar" onclick="imagem_slide()">
+        <a href="#modal-cadastrarIMG"><input type="button" id="cadastrar-img" value="Clique aqui e Cadastre" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')"></input></a>
     </div>
 
     <!--modal cadastrar-->
@@ -191,8 +145,8 @@
           <label for="titulo">Titulo do evento:</label>
           <input type="text" name="titulo" placeholder="Um titulo de até 20 letras">
           <label for="descricao">Descrição:</label>
-          <input type="text" name="descricao" placeholder="Uma descrição de até 50 letras">          
-          <button type="submit" onclick="closeAllModalCadastrar()">Cadastrar</button>
+          <input type="text" name="descricao" placeholder="Uma descrição de até 50 letras">  <br>       
+          <input type="submit" value="Cadastrar" onclick="closeAllModalCadastrar()"></input>
         </form>
     </div>
 </div>
