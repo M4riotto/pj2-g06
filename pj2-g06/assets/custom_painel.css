@@ -50,7 +50,7 @@ h2{
     font-size: 23px;
 }
 .caixa3, input{
-    font-size: 20px;    
+    font-size: 16px;    
 }
 .caixa3  button{
     padding: 15px;
@@ -66,7 +66,7 @@ form{
 }
 input, textarea, select{
     border-radius: 4px 10px 4px 10px;
-    padding: 15px;
+    padding: 5px;
     border: 2px solid var(--color1);
 }
 input[type=submit]{
