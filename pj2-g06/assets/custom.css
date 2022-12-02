@@ -93,7 +93,8 @@ header{
 }
 
 .modal .modal-body{
-    width: 600px;
+    top: 20px;
+    max-width: 600px;
     border-radius: 15px;
     background: var(--grey-1000);
     color: var(--grey-0);
