@@ -1,0 +1,88 @@
+:root{
+--color1: #ffbb9a;
+--color2: #ffed6e;
+--color3: #091fb4;
+--color4: #0368f684;
+--color5: #3eccff48;
+}
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: var(--color4);
+    border-bottom: 2px solid var(--color2);
+}
+span, a{
+    color: var(--color3);
+}
+body{
+    background-color:var(--color5);
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color4);
+    height: 80px;
+}
+h2{
+    text-align: center;
+}
+.caixa, .caixa2{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.caixa3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+.caixa3 > label{
+    font-size: 23px;
+}
+.caixa3, input{
+    font-size: 20px;    
+}
+.caixa3  button{
+    padding: 15px;
+    border: 2px solid var(--color1);
+}
+.caixa3 input:hover{
+    background-color: var(--color5);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+input, textarea, select{
+    border-radius: 4px 10px 4px 10px;
+    padding: 15px;
+    border: 2px solid var(--color1);
+}
+input[type=submit]{
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 20px;
+}
+input[type=submit]:hover{
+    background-color: var(--color5);
+}
+.cx1{
+    display: flex;
+    justify-content: space-between;
+}
+.p1, #numero, #cx {
+    text-align:center;
+    color: red;
+}

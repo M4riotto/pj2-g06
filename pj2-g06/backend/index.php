@@ -13,6 +13,13 @@
 </head>
 
 <style>
+    :root{
+    --color1: #ffbb9a;
+    --color2: #ffed6e;
+    --color3: #091fb4;
+    --color4: #0368f6;
+    --color5: #3ecbff;
+    }
     html,body{
         height: 100%;
     }
@@ -20,7 +27,7 @@
         max-width: 400px;
         padding: 0;
         margin: 0 auto !important;
-        background: cadetblue;
+        background: var(--color5);
     }
     #wrapper{
         height: 100%;
