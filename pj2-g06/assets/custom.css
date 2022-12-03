@@ -25,13 +25,14 @@
 }
 
 *{
-    font-family: 'Bree Serif', serif;
+    
 }
 
-body, html{
+*{
     margin: 0;
     padding: 0;
-    background-color: rgb(219, 216, 216);;
+    font-family: 'Bree Serif', serif;
+    
 }
 
 .bg-faded{
