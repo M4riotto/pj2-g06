@@ -1,7 +1,7 @@
 /*paleta de cores*/
 :root{
     --color4: #3368b3;
-    --color2: #ecde73;
+    --color2: #e3ddb1;
     --fundo: #ced6e0;
     --categoria: #ffcb9a;
 
@@ -25,15 +25,26 @@
 }
 
 *{
-    font-family: 'Bree Serif', serif;
+    
 }
 
-/*mini reset*/
-body, html{
+*{
     margin: 0;
     padding: 0;
-    background-color: rgb(219, 216, 216);;
+    font-family: 'Bree Serif', serif;
+    
 }
+
+.bg-faded{
+    background-color: #0368f684;
+}
+
+.imgLogo{
+    width: 50px;
+    margin-right: 5px;
+}
+
+
 
 header{
     background-color: #3eccff48;
@@ -44,9 +55,7 @@ header{
 }
 
 /*cor da navbar*/
-.bg-faded{
-    background-color: #0368f684;
-}
+
 
 #logo {
     display: flex;
@@ -276,7 +285,7 @@ footer.footer{
 }
 
 span{
-    color: var(--color4);
+    color: var(--color2);
 }
 
 .sair{
