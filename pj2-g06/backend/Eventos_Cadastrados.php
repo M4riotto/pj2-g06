@@ -14,34 +14,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto Integrador II</title>
 
-  <!--css bots-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <!--js boot-->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../assets/custom.css">
+
+  <script src="../bootstrap/js/jquery.js"></script>
+  <script src="../bootstrap/js/bootstrap.js"></script>
 </head>
 <body onload="loadEventosPainel()">
   <div class="wrapper">
-  <header>
-        <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
-        <h2><a href="logout.php">Sair</a></h2>
-        <a href="painel.php">Voltar para o cadastro</a>
+    <header class="justify-content-space-around">
+        <h3>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h3><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
+        <a class="sair" href="logout.php">Sair</a>
+        <a class="sair" href="painel.php">Voltar</a>
     </header>
 
   <!--categorias-->
-  <div class="categoria m-0 mt-3 mb-3">
+  <div class="categoria m-0 mt-0 mb-0">
     <div class="botoes_categoria">
-      <button class="ml-3">Categorias</button>
+      <h3 class="ml-4 categoria">Categorias</h3>
       <!-- <button class="mr-3">Ver tudo</button> -->
     </div>
     
-    <div class="cat justify-content-between">
-      <a href="#festas"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <a href="#palestras"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <a href="#halloween"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <a href="#standUP"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <a href="#workshops"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
+    <div class="cat justify-space-around">
+      <a href="#festas"><img class="categoria" title="Festas" src="../img/festas.jpg" alt="Festas" width="150" height="150"></a>
+      <a href="#palestras"><img class="categoria" title="Palestras" src="../img/palestras.jpg" alt="Palestras" width="150" height="150"></a>
+      <a href="#halloween"><img class="categoria" title="Halloween" src="../img/halloween.jpg" alt="Halloween" width="150" height="150"></a>
+      <a href="#standUP"><img class="categoria" title="StandUp" src="../img/startup.jpg" alt="StandUp" width="150" height="150"></a>
+      <a href="#workshops"><img class="categoria" title="Workshops" src="../img/workshop.jpg" alt="Workshops" width="150" height="150"></a>
     </div><!-- .cat -->
   </div> <!-- .categoria -->
 
@@ -105,7 +109,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white">
+  <footer class="footer bg-dark text-center text-white">
     <!-- Grid container -->
     <div class="container p-4">
       <!-- Section: Social media -->
@@ -159,7 +163,7 @@
                 <div class="col-auto">
                   <!-- Submit button -->
                   <button class="btn btn-outline-light mb-4" type="submit">
-                    Contatar
+                    Enviar
                   </button>
                 </div>
               </div>
@@ -173,9 +177,7 @@
       <!-- Section: Text -->
       <section class="mb-4">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-          eum harum corrupti dicta, aliquam sequi voluptate quas.
+          Site desenvolvido para fins acadêmicos, com o intuito de aplicarmos tudo o que aprendemos em aula. O NossoSite tem como principal objetivo o cadastramento de eventos em geral.
         </p>
       </section>
       <!-- Section: Text -->
@@ -183,7 +185,7 @@
     <!-- Grid container -->
     <!-- Copyright -->
     <div class="text-center text-muted footer-bg-color p-3">
-      © 2022 Copyright | Giovanna Siqueira and Vítor Moreira
+      © 2022 Copyright | Giovanna Siqueira | Vítor Moreira
     </div>
     <!-- Copyright -->
     
