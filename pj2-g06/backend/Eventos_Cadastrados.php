@@ -14,12 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto Integrador II</title>
 
-  <link rel="stylesheet" href="fontawesome/css/all.css">
-
+  <!--css bots-->
+  <link rel="stylesheet" href="../fontawesome/css/all.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <!--font google-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <!--js boot-->
+  <script src="../bootstrap/js/jquery.js"></script>
+  <script src="../bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../assets/custom.css">
 
   <script src="../bootstrap/js/jquery.js"></script>
@@ -132,11 +135,11 @@
         </a>
         <!-- Linkedin -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-linkedin-in fa-color-blue"></i>
         </a>
         <!-- Github -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github fa-color-blue"></i>
         </a>
       </section>
       <!-- Section: Social media -->
@@ -158,7 +161,7 @@
               <div class="form-outline form-white mb-4">
                 <input class="form-control" type="email" id="form5Example21" placeholder="email@gmail.com"/>
                 <br>
-                <textarea name="" id="" cols="60" rows="5" placeholder="Digite aqui..."></textarea>
+                <textarea class="form-control" name="" id="" cols="60" rows="5" placeholder="Digite aqui..."></textarea>
                 <!--Grid column-->
                 <div class="col-auto">
                   <!-- Submit button -->
@@ -287,7 +290,7 @@
             <label for="POST-name">Descrição:</label>
             <textarea name="descricaoP" id="POST-name" cols="30" rows="10"></textarea><br>
 
-            <input tyjpe="hidden" name="id"/>
+            <input type="hidden" name="id"/>
 
             <input id="cadastrar" type="submit" value="Cadastrar">
                     </form>

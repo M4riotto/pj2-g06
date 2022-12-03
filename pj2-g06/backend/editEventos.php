@@ -22,7 +22,7 @@
 
     try {
         $stmt = $connect->prepare("UPDATE eventos  AS ev INNER JOIN participantes AS par  ON ev.id = par.id SET ev.nome = :nome + ev.capa = :capa + ev.categoria = :categoria + ev.limiteP = :limiteP +  ev.dia = :dia + ev.horario = :horario + ev.endereco = :endereco + ev.municipio = :municipio + ev.uf = :uf + ev.descricao = :descricao + par.nomeP = :nomeP + par.descricaoP = :descricaoP + par.cpf = :cpf + par.sexo = :sexo
-        WHERE ev.id = :id and par.id = :id;");
+        WHERE ev.id = :id AND par.id = :id;");
         
         
 

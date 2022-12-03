@@ -19,14 +19,14 @@
             if(($query_alter) AND ($query_alter->rowCount() != 0)){//se a qtnd de linha que encontrou no BDD for ! 0,     então acessar o IF 
             
                 $row_usuario = $query_alter->fetch(PDO::FETCH_ASSOC);//lendo o valor com o fetch
-                var_dump($row_usuario);
+                //var_dump($row_usuario);
                 if($row_usuario == 0 ){
                     echo $erro[] = "<span style='color: #ff0000'>Erro: Usuário ou senha inválida!</span>";
                     }
                 if ($row_usuario != 0) {
                     $novasenha = substr(md5(time()), 0, 6);                   
                     $senhacripto = password_hash($novasenha, PASSWORD_DEFAULT);
-                    echo($novasenha);
+                    echo('Sua nova senha é: ' . $novasenha);
 //mail($email, "Sua nova senha", "Sua nova senha é: ".$senhacripto)
                     if (1==1) {
                         $update = "UPDATE usuarios set senha_usuario = '$senhacripto' WHERE email = '$email'";
