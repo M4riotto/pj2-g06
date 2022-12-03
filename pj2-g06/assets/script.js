@@ -283,7 +283,7 @@ async function loadEventos() {
                         <div class="card-body card-body2 p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button class="vaga btn" onclick="limiteP(this)">Separar Vaga</button>
+                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center;"
                                 <p>Participantes:</p>
