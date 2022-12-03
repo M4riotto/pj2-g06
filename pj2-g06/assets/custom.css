@@ -1,9 +1,12 @@
 /*paleta de cores*/
 :root{
+    --color4: #3368b3;
+    --color2: #ecde73;
+    --fundo: #ced6e0;
+    --categoria: #ffcb9a;
+
     --color1: #ffbb9a;
-    --color2: #ffed6e;
     --color3: #091fb4;
-    --color4: #0368f6;
     --color5: #3ecbff;
     
     --primary: #298519;
@@ -17,17 +20,16 @@
     --grey-1000:#fff;
 
     --color-primary-5: #56AB89;
-    --fundo: #d4fce3b9;
-    --categoria: #f8db7a;
     --color-primary-3: #2E795B;
     --color-primary-4: #0F3526;
 }
 
 /*mini reset*/
 body, html{
+    font-family: 'Bree Serif', serif;
     margin: 0;
     padding: 0;
-    background-color: var(--fundo);
+    background-color: rgb(219, 216, 216);;
 }
 
 header{
@@ -40,12 +42,13 @@ header{
 
 /*cor da navbar*/
 .bg-faded{
-    background-color: #44b16eb9;
+    background-color: #0368f684;
 }
 
 #logo {
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 h1{
@@ -53,13 +56,13 @@ h1{
 }
 
 .nav-link{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: black;
 }
 
 .active {
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 
 /* Div com os botões categoria e ver tudo alinhados */
@@ -68,27 +71,49 @@ h1{
 }
 
 .categoria {
-    background-color: var(--categoria);
+    background-color: var(--color2);
+}
+
+img.categoria{
+    border-radius: 200px;
 }
 
 .cat{
-    margin-top: 0;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    justify-content: space-around;
+    padding: 15px 35px 35px 35px;
 }
 
-h4.categoria {
+h3.categoria {
+    font-weight: bold;
     margin-top: 15px;
-    border-left: 4px solid rgb(211, 180, 3);
+    margin-left: 10px;
+    border-left: 5px solid rgb(233, 115, 18);
     padding: 5px;
 }
 
 .sign-in, .sign-up, .btn-light, .form-control {
     border-radius: 12px;
-    background-color: var(--categoria);
-    border: 2px solid rgb(233, 166, 41);
-    padding: 3px 7px;
+    background-color: rgb(219, 216, 216);
+    border:  2px solid rgb(241, 238, 238);
+    padding: 3px 9px;
+}
+
+.btn-light:hover{
+    background-color: rgb(175, 241, 180);
+    border:  2px solid rgb(175, 241, 180);
+}
+
+.sign-in:hover{
+    background-color: rgb(123, 212, 253);
+    border:  2px solid rgb(123, 212, 253);
+}
+
+.sign-up:hover{
+    background-color: rgb(118, 223, 127);
+    border:  2px solid rgb(118, 223, 127);
 }
 
 /*scroll*/
@@ -109,10 +134,6 @@ h4.categoria {
     font-size: 0.7rem;
 }
 
-.card{
-    width: 350px;
-}
-
 #festas, #palestras, #halloween, #standUP, #workshops{
     margin: 10px;
     display: flex;
@@ -121,27 +142,36 @@ h4.categoria {
 }
 
 .verMais{
-    font-size: 18px;
-    margin: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
     border:0;
     border-radius: 15px;
     background-color: #298519;
     color: #000;
-    padding: 1px 10px;
+    padding: 3px 10px;
 }
 
 .vaga {
-    margin: 5px;
-    font-size: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
     background-color: rgb(187, 27, 27);
     border-radius: 15px;
     border: 0;
-    padding: 0 10px;
+    padding: 5px;
 }
 
 h2{
-    margin-left: 10px;
+    margin-left: 30px;
+    border-left: 5px solid rgb(233, 115, 18);
+    padding: 5px;
+}
 
+.btn-outline-light{
+    margin-top: 5px;
+}
+
+.footer{
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /*modal*/
@@ -189,4 +219,55 @@ h2{
     .card{
         width: 200px;
     }
+}
+
+.wrapper1{
+    color: black;
+}
+.card{
+    background-color: rgb(255, 212, 147);
+    width: 100%;
+    height: 850px;
+    border-radius: 30px;
+}
+
+.card-img-top{
+    height: 200px;
+}
+
+.card-body1{
+    height: 150px;
+    overflow-y: auto;
+}
+
+.card-body1 > h5{
+    text-align: center;
+}
+
+.card-body2{
+    height: 90px;
+    overflow-y: auto;
+}
+
+.list-group{
+    padding: 10px;
+    height: 270px;
+    overflow-y: auto;
+}
+    
+.list-group-item{
+    background-color: rgb(255, 212, 147);
+}
+
+/*personalizar a barra em geral*/
+.list-group::-webkit-scrollbar {
+    width: 1px;
+}
+
+.card-body1::-webkit-scrollbar {
+    width: 1px;
+}
+
+.card-body2::-webkit-scrollbar {
+    width: 1px;
 }

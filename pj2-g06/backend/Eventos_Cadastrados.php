@@ -42,14 +42,6 @@
       <a href="#halloween"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
       <a href="#standUP"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
       <a href="#workshops"><img src="../img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <!-- <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"> </a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"> </a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"> </a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"> </a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"> </a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"></a>
-      <a href="#"><img src="img/categoria.png" alt="Categoria x" width="115" height="150"></a> -->
     </div><!-- .cat -->
   </div> <!-- .categoria -->
 
