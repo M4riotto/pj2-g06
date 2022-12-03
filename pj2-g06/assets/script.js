@@ -121,361 +121,87 @@ async function loadEventos() {
         listaClientes5.innerHTML = ''
         const clientes = result.data
         clientes.map((eventos) => {
+            const card =  `
+            <div class="wrapper1 col-lg-3 col-md-4">
+                <div class="card">
+                    <div class="card-header col text-center p-2">${eventos.categoria}</div>
+                    <img src="${eventos.capa}" class="card-img-top">
+                    <div class="card-body card-body1">
+                        <h5 class="card-title">${eventos.nome}</h5>
+                        <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Dia: ${eventos.dia}</li>
+                        <li class="list-group-item">Horário: ${eventos.horario}</li>
+                        <li class="list-group-item">Local: ${eventos.endereco}</li>
+                        <li class="list-group-item">Município: ${eventos.municipio}</li>
+                        <li class="list-group-item">UF: ${eventos.uf}</li>
+                    </ul>
+                    <div class="card-body card-body2 p-2">
+                        <div style="display: flex; justify-content: space-between;">
+                            <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                            <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;"
+                            <p>Participantes:</p>
+                            <!-- Botão que irá abrir o modal -->
+                            <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+
+                            <!-- Modal -->
+                            <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
+                                <div class="modal-dialog">
+                                    <!-- Conteúdo do modal-->
+                                    <div class="modal-content">
+
+                                        <!-- Cabeçalho do modal -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
+                                        </div>
+
+                                        <!-- Corpo do modal -->
+                                        <div class="modal-body col-12">
+                                            <table style="border: 1px solid black; padding: 5px;">
+                                                <tr style="border: 1px solid black; padding: 5px;">
+                                                    <th style="border: 1px solid black; padding: 5px;">Nome:</th>
+                                                    <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
+                                                </tr>
+                                                <tr style="border: 1px solid black; padding: 5px;">
+                                                    <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
+                                                    <td style="border: 1px solid black; padding: 5px;">${eventos.  descricaoP}</td>
+                                                </tr>
+                                            </table><br>
+
+                                            <p>Palestrante: ${eventos.nomeP}</p>
+                                            <p>Sobre: ${eventos.descricaoP}</p>
+                                        </div>
+
+                                        <!-- Rodapé do modal-->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-right card-rodape-empresa text-muted">
+                        NOSSO SITE
+                    </div>
+                </div><!--card-->
+            </div><!--col do car--> 
+        `
             if (eventos.categoria === 'festas') {
-                listaClientes.innerHTML += `
-                <div class="wrapper1 col-lg-3 col-md-4">
-                    <div class="card">
-                        <div class="card-header col text-center p-2">Festas</div>
-                        <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body card-body1">
-                            <h5 class="card-title">${eventos.nome}</h5>
-                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Dia: ${eventos.dia}</li>
-                            <li class="list-group-item">Horário: ${eventos.horario}</li>
-                            <li class="list-group-item">Local: ${eventos.endereco}</li>
-                            <li class="list-group-item">Município: ${eventos.municipio}</li>
-                            <li class="list-group-item">UF: ${eventos.uf}</li>
-                        </ul>
-                        <div class="card-body card-body2 p-2">
-                            <div style="display: flex; justify-content: space-between;">
-                                <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"
-                                <p>Participantes:</p>
-                                <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
-
-                                <!-- Modal -->
-                                <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
-                                    <div class="modal-dialog">
-                                        <!-- Conteúdo do modal-->
-                                        <div class="modal-content">
-
-                                            <!-- Cabeçalho do modal -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
-                                            </div>
-
-                                            <!-- Corpo do modal -->
-                                            <div class="modal-body col-12">
-                                                <table style="border: 1px solid black; padding: 5px;">
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <th style="border: 1px solid black; padding: 5px;">Nome:</th>
-                                                        <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
-                                                    </tr>
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
-                                                    </tr>
-                                                </table><br>
-
-                                                <p>Palestrante: ${eventos.nomeP}</p>
-                                                <p>Sobre: ${eventos.descricaoP}</p>
-                                            </div>
-
-                                            <!-- Rodapé do modal-->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer text-right card-rodape-empresa text-muted">
-                            NOSSO SITE
-                        </div>
-                    </div><!--card-->
-                </div><!--col do car--> 
-            `        
+                listaClientes.innerHTML += card;       
             } else if (eventos.categoria === 'palestras') {
-                listaClientes2.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                    <div class="card">
-                        <div class="card-header col text-center p-2">Palestras</div>
-                        <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body card-body1">
-                            <h5 class="card-title">${eventos.nome}</h5>
-                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Dia: ${eventos.dia}</li>
-                            <li class="list-group-item">Horário: ${eventos.horario}</li>
-                            <li class="list-group-item">Local: ${eventos.endereco}</li>
-                            <li class="list-group-item">Município: ${eventos.municipio}</li>
-                            <li class="list-group-item">UF: ${eventos.uf}</li>
-                        </ul>
-                        <div class="card-body card-body2 p-2">
-                            <div style="display: flex; justify-content: space-between;">
-                                <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"
-                                <p>Participantes:</p>
-                                <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
-
-                                <!-- Modal -->
-                                <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
-                                    <div class="modal-dialog">
-                                        <!-- Conteúdo do modal-->
-                                        <div class="modal-content">
-
-                                            <!-- Cabeçalho do modal -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
-                                            </div>
-
-                                            <!-- Corpo do modal -->
-                                            <div class="modal-body col-12">
-                                                <table style="border: 1px solid black; padding: 5px;">
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <th style="border: 1px solid black; padding: 5px;">Nome:</th>
-                                                        <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
-                                                    </tr>
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
-                                                    </tr>
-                                                </table><br>
-
-                                                <p>Palestrante: ${eventos.nomeP}</p>
-                                                <p>Sobre: ${eventos.descricaoP}</p>
-                                            </div>
-
-                                            <!-- Rodapé do modal-->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer text-right card-rodape-empresa text-muted">
-                            NOSSO SITE
-                        </div>
-                    </div><!--card-->
-                </div><!--col do car--> 
-            ` 
+                listaClientes2.innerHTML += card;
             } else if (eventos.categoria === 'halloween') {
-                listaClientes3.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                    <div class="card justify-content-space-around">
-                        <div class="card-header col text-center p-2">Halloween</div>
-                        <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body card-body1">
-                            <h5 class="card-title">${eventos.nome}</h5>
-                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Dia: ${eventos.dia}</li>
-                            <li class="list-group-item">Horário: ${eventos.horario}</li>
-                            <li class="list-group-item">Local: ${eventos.endereco}</li>
-                            <li class="list-group-item">Município: ${eventos.municipio}</li>
-                            <li class="list-group-item">UF: ${eventos.uf}</li>
-                        </ul>
-                        <div class="card-body card-body2 p-2">
-                            <div style="display: flex; justify-content: space-between;">
-                                <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"
-                                <p>Participantes:</p>
-                                <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
-
-                                <!-- Modal -->
-                                <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
-                                    <div class="modal-dialog">
-                                        <!-- Conteúdo do modal-->
-                                        <div class="modal-content">
-
-                                            <!-- Cabeçalho do modal -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
-                                            </div>
-
-                                            <!-- Corpo do modal -->
-                                            <div class="modal-body col-12">
-                                                <table style="border: 1px solid black; padding: 5px;">
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <th style="border: 1px solid black; padding: 5px;">Nome:</th>
-                                                        <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
-                                                    </tr>
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
-                                                    </tr>
-                                                </table><br>
-
-                                                <p>Palestrante: ${eventos.nomeP}</p>
-                                                <p>Sobre: ${eventos.descricaoP}</p>
-                                            </div>
-
-                                            <!-- Rodapé do modal-->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer text-right card-rodape-empresa text-muted">
-                            NOSSO SITE
-                        </div>
-                    </div><!--card-->
-                </div><!--col do car--> 
-            ` 
+                listaClientes3.innerHTML +=  card
+         
             } else if (eventos.categoria === 'standUP') {
-                listaClientes4.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                    <div class="card">
-                        <div class="card-header col text-center p-2">StandUp</div>
-                        <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body card-body1">
-                            <h5 class="card-title">${eventos.nome}</h5>
-                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Dia: ${eventos.dia}</li>
-                            <li class="list-group-item">Horário: ${eventos.horario}</li>
-                            <li class="list-group-item">Local: ${eventos.endereco}</li>
-                            <li class="list-group-item">Município: ${eventos.municipio}</li>
-                            <li class="list-group-item">UF: ${eventos.uf}</li>
-                        </ul>
-                        <div class="card-body card-body2 p-2">
-                            <div style="display: flex; justify-content: space-between;">
-                                <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"
-                                <p>Participantes:</p>
-                                <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
-
-                                <!-- Modal -->
-                                <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
-                                    <div class="modal-dialog">
-                                        <!-- Conteúdo do modal-->
-                                        <div class="modal-content">
-
-                                            <!-- Cabeçalho do modal -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
-                                            </div>
-
-                                            <!-- Corpo do modal -->
-                                            <div class="modal-body col-12">
-                                                <table style="border: 1px solid black; padding: 5px;">
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <th style="border: 1px solid black; padding: 5px;">Nome:</th>
-                                                        <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
-                                                    </tr>
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
-                                                    </tr>
-                                                </table><br>
-
-                                                <p>Palestrante: ${eventos.nomeP}</p>
-                                                <p>Sobre: ${eventos.descricaoP}</p>
-                                            </div>
-
-                                            <!-- Rodapé do modal-->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer text-right card-rodape-empresa text-muted">
-                            NOSSO SITE
-                        </div>
-                    </div><!--card-->
-                </div><!--col do car--> 
-            ` 
+                listaClientes4.innerHTML += card 
             } else {
-                listaClientes5.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                    <div class="card">
-                        <div class="card-header col text-center p-2">Workshops</div>
-                        <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body card-body1">
-                            <h5 class="card-title">${eventos.nome}</h5>
-                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Dia: ${eventos.dia}</li>
-                            <li class="list-group-item">Horário: ${eventos.horario}</li>
-                            <li class="list-group-item">Local: ${eventos.endereco}</li>
-                            <li class="list-group-item">Município: ${eventos.municipio}</li>
-                            <li class="list-group-item">UF: ${eventos.uf}</li>
-                        </ul>
-                        <div class="card-body card-body2 p-2">
-                            <div style="display: flex; justify-content: space-between;">
-                                <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                                <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"
-                                <p>Participantes:</p>
-                                <!-- Botão que irá abrir o modal -->
-                                <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
-
-                                <!-- Modal -->
-                                <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
-                                    <div class="modal-dialog">
-                                        <!-- Conteúdo do modal-->
-                                        <div class="modal-content">
-
-                                            <!-- Cabeçalho do modal -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
-                                            </div>
-
-                                            <!-- Corpo do modal -->
-                                            <div class="modal-body col-12">
-                                                <table style="border: 1px solid black; padding: 5px;">
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <th style="border: 1px solid black; padding: 5px;">Nome:</th>
-                                                        <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
-                                                    </tr>
-                                                    <tr style="border: 1px solid black; padding: 5px;">
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
-                                                        <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
-                                                    </tr>
-                                                </table><br>
-
-                                                <p>Palestrante: ${eventos.nomeP}</p>
-                                                <p>Sobre: ${eventos.descricaoP}</p>
-                                            </div>
-
-                                            <!-- Rodapé do modal-->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer text-right card-rodape-empresa text-muted">
-                            NOSSO SITE
-                        </div>
-                    </div><!--card-->
-                </div><!--col do car--> 
-            ` 
+                listaClientes5.innerHTML += card 
             }
         })
     }else{
@@ -635,151 +361,92 @@ async function loadEventosPainel() {
         listaClientes5.innerHTML = ''
         const clientes = result.data
         clientes.map((eventos) => {
+            const card2 = `<div class="wrapper1 col-lg-3 col-md-4">
+            <div class="card">
+                <div class="card-header col text-center p-2">Festas</div>
+                <img src="${eventos.capa}" class="card-img-top">
+                <div class="card-body card-body1">
+                    <h5 class="card-title">${eventos.nome}</h5>
+                    <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">Dia: ${eventos.dia}</li>
+                    <li class="list-group-item">Horário: ${eventos.horario}</li>
+                    <li class="list-group-item">Local: ${eventos.endereco}</li>
+                    <li class="list-group-item">Município: ${eventos.municipio}</li>
+                    <li class="list-group-item">UF: ${eventos.uf}</li>
+                </ul>
+                
+                <button onclick="deleteEvento(${eventos.id})">Apagar</button>
+                    <a href="#modal-editar">
+                        <button onclick="loadClienteData(${eventos.id})">EDITAR</button>
+                    </a>
+                    
+                <div class="card-body card-body2 p-2">
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                        <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;"
+                        <p>Participantes:</p>
+                        <!-- Botão que irá abrir o modal -->
+                        <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                        
+
+                        <!-- Modal -->
+                        <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
+                            <div class="modal-dialog">
+                                <!-- Conteúdo do modal-->
+                                <div class="modal-content">
+
+                                    <!-- Cabeçalho do modal -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Participantes: ${eventos.nome}</h4>
+                                    </div>
+
+                                    <!-- Corpo do modal -->
+                                    <div class="modal-body col-12">
+                                        <table style="border: 1px solid black; padding: 5px;">
+                                            <tr style="border: 1px solid black; padding: 5px;">
+                                                <th style="border: 1px solid black; padding: 5px;">Nome:</th>
+                                                <th style="border: 1px solid black; padding: 5px;">Descrição:</th>
+                                            </tr>
+                                            <tr style="border: 1px solid black; padding: 5px;">
+                                                <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
+                                                <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
+                                            </tr>
+                                        </table><br>
+
+                                        <p>Palestrante: ${eventos.nomeP}</p>
+                                        <p>Sobre: ${eventos.descricaoP}</p>
+                                    </div>
+
+                                    <!-- Rodapé do modal-->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer text-right card-rodape-empresa text-muted">
+                    NOSSO SITE
+                </div>
+            </div><!--card-->
+        </div><!--col do car--> 
+    `
             if (eventos.categoria === 'festas') {
-                listaClientes.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                    <div class="card">
-                        <div class="card-header col text-center p-2">Festas</div>
-                        <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body card-body1">
-                            <h5 class="card-title">${eventos.nome}</h5>
-                            <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">Dia: ${eventos.dia}</li>
-                            <li class="list-group-item">Horário: ${eventos.horario}</li>
-                            <li class="list-group-item">Local: ${eventos.endereco}</li>
-                            <li class="list-group-item">Município: ${eventos.municipio}</li>
-                            <li class="list-group-item">UF: ${eventos.uf}</li>
-                        </ul>
-                        <div class="card-body card-body2 p-2">
-                            <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                            <button class="vaga"  id="btn" onclick="limiteP()">Separar Vaga</button>
-                        </div>
-                        <div onclick="deleteEvento(${eventos.id})">Apagar</div>
-                        <a href="#modal-editar"><div onclick="loadClienteData(${eventos.id})">Editar</div></a>
-                        <div class="card-footer text-right card-rodape-empresa text-muted">
-                            Nosso Site
-                        </div>
-                    </div><!--card-->
-                </div><!--col do car--> 
-            `        
-            } else if (eventos.categoria === 'palestras') {
-                listaClientes2.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                <div class="card">
-                    <div class="card-header col text-center p-2">Palestras</div>
-                    <img src="${eventos.capa}" class="card-img-top">
-                    <div class="card-body card-body1">
-                        <h5 class="card-title">${eventos.nome}</h5>
-                        <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Dia: ${eventos.dia}</li>
-                        <li class="list-group-item">Horário: ${eventos.horario}</li>
-                        <li class="list-group-item">Local: ${eventos.endereco}</li>
-                        <li class="list-group-item">Município: ${eventos.municipio}</li>
-                        <li class="list-group-item">UF: ${eventos.uf}</li>
-                    </ul>
-                    <div class="card-body card-body2 p-2">
-                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                        <button class="vaga"  id="btn" onclick="limiteP()">Separar Vaga</button>
-                    </div>
-                    <div onclick="deleteEvento(${eventos.id})">Apagar</div>
-                    <a href="#modal-editar"><div onclick="loadClienteData(${eventos.id})">Editar</div></a>
-                    <div class="card-footer text-right card-rodape-empresa text-muted">
-                        Nosso Site
-                    </div>
-                </div><!--card-->
-            </div><!--col do car--> 
-            ` 
+                listaClientes.innerHTML +=  card2;       
+            } else if (eventos.categoria === 'palestras') { 
+                listaClientes2.innerHTML += card2;  
             } else if (eventos.categoria === 'halloween') {
-                listaClientes3.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                <div class="card">
-                    <div class="card-header col text-center p-2">Halloween</div>
-                    <img src="${eventos.capa}" class="card-img-top">
-                    <div class="card-body card-body1">
-                        <h5 class="card-title">${eventos.nome}</h5>
-                        <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Dia: ${eventos.dia}</li>
-                        <li class="list-group-item">Horário: ${eventos.horario}</li>
-                        <li class="list-group-item">Local: ${eventos.endereco}</li>
-                        <li class="list-group-item">Município: ${eventos.municipio}</li>
-                        <li class="list-group-item">UF: ${eventos.uf}</li>
-                    </ul>
-                    <div class="card-body card-body2 p-2">
-                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                        <button class="vaga"  id="btn" onclick="limiteP()">Separar Vaga</button>
-                    </div>
-                    <div onclick="deleteEvento(${eventos.id})">Apagar</div>
-                    <a href="#modal-editar"><div onclick="loadClienteData(${eventos.id})">Editar</div></a>
-                    <div class="card-footer text-right card-rodape-empresa text-muted">
-                        Nosso Site
-                    </div>
-                </div><!--card-->
-            </div><!--col do car-->  
-            ` 
+                listaClientes3.innerHTML += card2;  
             } else if (eventos.categoria === 'standUP') {
-                listaClientes4.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                <div class="card">
-                    <div class="card-header col text-center p-2">StandUp</div>
-                    <img src="${eventos.capa}" class="card-img-top">
-                    <div class="card-body card-body1">
-                        <h5 class="card-title">${eventos.nome}</h5>
-                        <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Dia: ${eventos.dia}</li>
-                        <li class="list-group-item">Horário: ${eventos.horario}</li>
-                        <li class="list-group-item">Local: ${eventos.endereco}</li>
-                        <li class="list-group-item">Município: ${eventos.municipio}</li>
-                        <li class="list-group-item">UF: ${eventos.uf}</li>
-                    </ul>
-                    <div class="card-body card-body2 p-2">
-                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                        <button class="vaga"  id="btn" onclick="limiteP()">Separar Vaga</button>
-                    </div>
-                    <div onclick="deleteEvento(${eventos.id})">Apagar</div>
-                    <a href="#modal-editar"><div onclick="loadClienteData(${eventos.id})">Editar</div></a>
-                    <div class="card-footer text-right card-rodape-empresa text-muted">
-                        Nosso Site
-                    </div>
-                </div><!--card-->
-            </div><!--col do car--> 
-            ` 
+                listaClientes4.innerHTML += card2;  
             } else {
-                listaClientes5.innerHTML += `
-                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
-                <div class="card">
-                    <div class="card-header col text-center p-2">Workshopps</div>
-                    <img src="${eventos.capa}" class="card-img-top">
-                    <div class="card-body card-body1">
-                        <h5 class="card-title">${eventos.nome}</h5>
-                        <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Dia: ${eventos.dia}</li>
-                        <li class="list-group-item">Horário: ${eventos.horario}</li>
-                        <li class="list-group-item">Local: ${eventos.endereco}</li>
-                        <li class="list-group-item">Município: ${eventos.municipio}</li>
-                        <li class="list-group-item">UF: ${eventos.uf}</li>
-                    </ul>
-                    <div class="card-body card-body2 p-2">
-                        <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                        <button class="vaga"  id="btn" onclick="limiteP()">Separar Vaga</button>
-                    </div>
-                    <div onclick="deleteEvento(${eventos.id})">Apagar</div>
-                    <a href="#modal-editar"><div onclick="loadClienteData(${eventos.id})">Editar</div></a>
-                    <div class="card-footer text-right card-rodape-empresa text-muted">
-                        Nosso Site
-                    </div>
-                </div><!--card-->
-            </div><!--col do car--> 
-            ` 
+                listaClientes5.innerHTML += card2;  
             }
         })
     }else{

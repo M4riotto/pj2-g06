@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Dez-2022 às 04:05
+-- Tempo de geração: 03-Dez-2022 às 03:49
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -46,7 +46,7 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id`, `nome`, `descricao`, `dia`, `horario`, `capa`, `endereco`, `municipio`, `uf`, `limiteP`, `categoria`) VALUES
-(1, 'VITOR GABRIEL MARIOTTO MOREIRA', 'sfqwf qw qr qwrqwrqw rrwqwr qwrqrqw wrqrqw', '2022-12-02', '00:57', 'https://wallpaperaccess.com/full/2461288.jpg', 'Rua AntÃ´nio pereira garcia, 117', 'caraguatatuba', 'RJ', 10, 'halloween');
+(3, '1', 'wfqwfqwfqwfqwfqw', '2023-01-06', '00:10', 'https://wallpaperaccess.com/full/2461288.jpg', 'Rua AntÃ´nio pereira garcia, 120', 'caraguatatuba', 'RJ', 2, 'festas');
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,9 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`id`, `cpf`, `nomeP`, `sexo`, `descricaoP`) VALUES
-(1, 490401, 'vitor', 'm', 'qwfqfqfgqwwgqvq');
+(1, 490401, 'vitor', 'm', 'qwfqfqfgqwwgqvq'),
+(2, 0, 'vitor', 'f', 'qfqwfqw'),
+(3, 490401, 'vitor', 'm', 'qwvwvqvqwv');
 
 -- --------------------------------------------------------
 
@@ -112,8 +114,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `cpf`, `dataNascimento`, `nome`, `email`, `sexo`, `usuario`, `senha_usuario`) VALUES
-(8, '490.401.288-71', '2003-07-18', 'Vitor', 'vitormariotto03@gmail.com', 'M', 'vitor', '$2y$10$DpkFTj6mWvC0DMHAfKmEEu44zsLdhxg5VQfqFIP0E20pslpcirfDS'),
-(13, '54105564889', '2004-01-10', 'Giovanna', 'siqueira.nicolau@ifsp.edu.br', 'F', 'giovanna', '$2y$10$E8eJj6lqMMx7JOdxo7gD7OWE/XPFjKN6EZeE2C6gK0QTUjCKy4yaO');
+(8, '490.401.288-71', '2003-07-18', 'Vitor', 'vitormariotto03@gmail.com', 'M', 'vitor', '$2y$10$UP1ERbKtsQl7MA2mWIz22eNTn4Igdlsd4K5y0DvicH97JlLsKlkmS'),
+(13, '54105564889', '2004-01-10', 'Giovanna', 'siqueira.nicolau@ifsp.edu.br', 'F', 'giovanna', '$2y$10$Sytw5GSY0esxFCKUL3pbLup9GTlO0OhDkEwHUt98pJIvya7ao3IDG');
 
 --
 -- Índices para tabelas despejadas
@@ -151,7 +153,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `foto`
@@ -163,7 +165,7 @@ ALTER TABLE `foto`
 -- AUTO_INCREMENT de tabela `participantes`
 --
 ALTER TABLE `participantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
