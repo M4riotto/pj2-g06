@@ -123,14 +123,13 @@ async function loadEventos() {
         clientes.map((eventos) => {
             if (eventos.categoria === 'festas') {
                 listaClientes.innerHTML += `
-                <div class="ccol-sm-6 col-lg-3 col-md-4">
+                <div class="wrapper1 col-lg-3 col-md-4">
                     <div class="card">
-                        <div class="card-header col text-center p-2">Evento</div>
+                        <div class="card-header col text-center p-2">Festas</div>
                         <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body card-body1">
                             <h5 class="card-title">${eventos.nome}</h5>
                             <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                            <p>${eventos.categoria}</p>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">Dia: ${eventos.dia}</li>
@@ -139,7 +138,7 @@ async function loadEventos() {
                             <li class="list-group-item">Município: ${eventos.municipio}</li>
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
-                        <div class="card-body p-2">
+                        <div class="card-body card-body2 p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                                 <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
@@ -195,14 +194,13 @@ async function loadEventos() {
             `        
             } else if (eventos.categoria === 'palestras') {
                 listaClientes2.innerHTML += `
-                <div class="col-sm-6 col-lg-3 col-md-4">
+                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
                     <div class="card">
-                        <div class="card-header col text-center p-2">Evento</div>
+                        <div class="card-header col text-center p-2">Palestras</div>
                         <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body card-body1">
                             <h5 class="card-title">${eventos.nome}</h5>
                             <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                            <p>${eventos.categoria}</p>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">Dia: ${eventos.dia}</li>
@@ -211,7 +209,7 @@ async function loadEventos() {
                             <li class="list-group-item">Município: ${eventos.municipio}</li>
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
-                        <div class="card-body p-2">
+                        <div class="card-body card-body2 p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                                 <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
@@ -267,14 +265,13 @@ async function loadEventos() {
             ` 
             } else if (eventos.categoria === 'halloween') {
                 listaClientes3.innerHTML += `
-                <div class="col-sm-6 col-lg-3 col-md-4">
+                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
                     <div class="card justify-content-space-around">
-                        <div class="card-header col text-center p-2">Evento</div>
+                        <div class="card-header col text-center p-2">Halloween</div>
                         <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body card-body1">
                             <h5 class="card-title">${eventos.nome}</h5>
                             <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                            <p>${eventos.categoria}</p>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">Dia: ${eventos.dia}</li>
@@ -283,7 +280,7 @@ async function loadEventos() {
                             <li class="list-group-item">Município: ${eventos.municipio}</li>
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
-                        <div class="card-body p-2">
+                        <div class="card-body card-body2 p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                                 <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
@@ -323,7 +320,7 @@ async function loadEventos() {
 
                                             <!-- Rodapé do modal-->
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</  button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -339,14 +336,13 @@ async function loadEventos() {
             ` 
             } else if (eventos.categoria === 'standUP') {
                 listaClientes4.innerHTML += `
-                <div class="col-sm-6 col-lg-3 col-md-4">
+                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
                     <div class="card">
-                        <div class="card-header col text-center p-2">Evento</div>
+                        <div class="card-header col text-center p-2">StandUp</div>
                         <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body card-body1">
                             <h5 class="card-title">${eventos.nome}</h5>
                             <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                            <p>${eventos.categoria}</p>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">Dia: ${eventos.dia}</li>
@@ -355,7 +351,7 @@ async function loadEventos() {
                             <li class="list-group-item">Município: ${eventos.municipio}</li>
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
-                        <div class="card-body p-2">
+                        <div class="card-body card-body2 p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                                 <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
@@ -411,14 +407,13 @@ async function loadEventos() {
             ` 
             } else {
                 listaClientes5.innerHTML += `
-                <div class="col-sm-6 col-lg-3 col-md-4">
+                <div class="wrapper1 col-sm-6 col-lg-3 col-md-4">
                     <div class="card">
-                        <div class="card-header col text-center p-2">Evento</div>
+                        <div class="card-header col text-center p-2">Workshops</div>
                         <img src="${eventos.capa}" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body card-body1">
                             <h5 class="card-title">${eventos.nome}</h5>
                             <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
-                            <p>${eventos.categoria}</p>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">Dia: ${eventos.dia}</li>
@@ -427,7 +422,7 @@ async function loadEventos() {
                             <li class="list-group-item">Município: ${eventos.municipio}</li>
                             <li class="list-group-item">UF: ${eventos.uf}</li>
                         </ul>
-                        <div class="card-body p-2">
+                        <div class="card-body card-body2 p-2">
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                                 <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
