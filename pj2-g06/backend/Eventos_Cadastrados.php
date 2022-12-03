@@ -43,7 +43,7 @@
       <!-- <button class="mr-3">Ver tudo</button> -->
     </div>
     
-    <div class="cat justify-space-around">
+    <div class="cat justify-space-evenly">
       <a href="#festas"><img class="categoria" title="Festas" src="../img/festas.jpg" alt="Festas" width="150" height="150"></a>
       <a href="#palestras"><img class="categoria" title="Palestras" src="../img/palestras.jpg" alt="Palestras" width="150" height="150"></a>
       <a href="#halloween"><img class="categoria" title="Halloween" src="../img/halloween.jpg" alt="Halloween" width="150" height="150"></a>
@@ -99,15 +99,15 @@
 
   <!--divs das categorias para js--> <!-- Aqui irá aparecer os cards -->
   <div id="corpo1">
-    <h2>festas</h2>
+    <h2>Festas</h2>
     <div id="festas"></div>
-    <h2>palestras</h2>
+    <h2>Palestras</h2>
     <div id="palestras"></div>
-    <h2>halloween</h2>
+    <h2>Halloween</h2>
     <div id="halloween"></div>
-    <h2>standUP</h2>
+    <h2>StandUP</h2>
     <div id="standUP"></div>
-    <h2>workshops</h2>
+    <h2>Workshops</h2>
     <div id="workshops"></div>
   </div>
 
