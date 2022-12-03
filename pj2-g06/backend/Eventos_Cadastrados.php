@@ -15,10 +15,11 @@
   <title>Projeto Integrador II</title>
 
   <!--css bots-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="../fontawesome/css/all.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
   <!--js boot-->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script src="../bootstrap/js/jquery.js"></script>
+  <script src="../bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../assets/custom.css">
 </head>
 <body onload="loadEventosPainel()">
@@ -105,7 +106,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white">
+  <footer class="footer bg-dark text-center text-white">
     <!-- Grid container -->
     <div class="container p-4">
       <!-- Section: Social media -->
@@ -128,11 +129,11 @@
         </a>
         <!-- Linkedin -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-linkedin-in fa-color-blue"></i>
         </a>
         <!-- Github -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github fa-color-blue"></i>
         </a>
       </section>
       <!-- Section: Social media -->
@@ -154,12 +155,12 @@
               <div class="form-outline form-white mb-4">
                 <input class="form-control" type="email" id="form5Example21" placeholder="email@gmail.com"/>
                 <br>
-                <textarea name="" id="" cols="60" rows="5" placeholder="Digite aqui..."></textarea>
+                <textarea class="form-control" name="" id="" cols="60" rows="5" placeholder="Digite aqui..."></textarea>
                 <!--Grid column-->
                 <div class="col-auto">
                   <!-- Submit button -->
                   <button class="btn btn-outline-light mb-4" type="submit">
-                    Contatar
+                    Enviar
                   </button>
                 </div>
               </div>
@@ -173,9 +174,7 @@
       <!-- Section: Text -->
       <section class="mb-4">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-          eum harum corrupti dicta, aliquam sequi voluptate quas.
+          Site desenvolvido para fins acadêmicos, com o intuito de aplicarmos tudo o que aprendemos em aula. O NossoSite tem como principal objetivo o cadastramento de eventos em geral.
         </p>
       </section>
       <!-- Section: Text -->
@@ -183,7 +182,7 @@
     <!-- Grid container -->
     <!-- Copyright -->
     <div class="text-center text-muted footer-bg-color p-3">
-      © 2022 Copyright | Giovanna Siqueira and Vítor Moreira
+      © 2022 Copyright | Giovanna Siqueira | Vítor Moreira
     </div>
     <!-- Copyright -->
     
@@ -285,7 +284,7 @@
             <label for="POST-name">Descrição:</label>
             <textarea name="descricaoP" id="POST-name" cols="30" rows="10"></textarea><br>
 
-            <input tyjpe="hidden" name="id"/>
+            <input type="hidden" name="id"/>
 
             <input id="cadastrar" type="submit" value="Cadastrar">
                     </form>
