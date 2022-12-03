@@ -547,9 +547,85 @@ function limiteP() {
     }
 }
 
+async function deleteEvento(id) {
+    const response = await fetch('deleteEvento.php?id='+id)
+    const result = await response.json()               
+    if (result?.success) {
+        alert('Seu Cliente foi excluido com sucesso!');
+        loadEventosPainel();
+    }
+}
+
+async function loadClienteData(id) {
+    const response = await fetch('get-evento-by-id.php?id='+id)
+    const result = await response.json()               
+    if (result?.success) {
+        showModalCadastrar('#modal-editar')
+        const nome = document.querySelector('#modal-editar input[name=nome]')
+        nome.value = result.data.nome
+
+        const capa = document.querySelector('#modal-editar input[name=capa]')
+        capa.value = result.data.capa
+
+        const categoria = document.querySelector('#modal-editar select[name=categoria]')
+        categoria.value = result.data.categoria
+
+        const limiteP = document.querySelector('#modal-editar input[name=limiteP]')
+        limiteP.value = result.data.limiteP
+
+        const dia = document.querySelector('#modal-editar input[name=dia]')
+        dia.value = result.data.dia
+
+        const horario = document.querySelector('#modal-editar input[name=horario]')
+        horario.value = result.data.horario
+
+        const endereco = document.querySelector('#modal-editar input[name=endereco]')
+        endereco.value = result.data.endereco
+
+        const municipio = document.querySelector('#modal-editar input[name=municipio]')
+        municipio.value = result.data.municipio
+
+        const uf = document.querySelector('#modal-editar select[name=uf]')
+        uf.value = result.data.uf
+
+        const descricao = document.querySelector('#modal-editar textarea[name=descricao]')
+        descricao.value = result.data.descricao
+
+        const nomeP = document.querySelector('#modal-editar input[name=nomeP]')
+        nomeP.value = result.data.nomeP
+
+        const descricaoP = document.querySelector('#modal-editar textarea[name=descricaoP]')
+        descricaoP.value = result.data.descricaoP
+
+        const cpf = document.querySelector('#modal-editar input[name=cpf]')
+        cpf.value = result.data.cpf
+
+        const sexo = document.querySelector('#modal-editar select[name=sexo]')
+        sexo.value = result.data.sexo
+
+        const id = document.querySelector('#modal-editar input[name=id]')
+        id.value = result.data.id
+    }
+}
+
+async function editEvento(event) {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const response = await fetch('editEventos.php?',{
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if (result?.success) {
+        closeAllModalCadastrar()
+        alert('Seu evento ' + result.data.nome + ' foi editado com sucesso!');
+        loadEventosPainel()
+    }
+}
+
 //FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
 async function loadEventosPainel() {
-    const response = await fetch('list-ev-par.php')
+    const response = await fetch('listar-ev-par.php')
     const result = await response.json()
     if (result?.success) {
         const listaClientes = document.querySelector('#festas')
@@ -586,6 +662,8 @@ async function loadEventosPainel() {
                             <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                             <button  id="btn" onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
+                        <div onclick="deleteEvento(${eventos.id})">Apagar</div>
+                        <a href="#modal-editar"><div onclick="loadClienteData(${eventos.id})">EDITAR</div></a>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
                         </div>
@@ -614,6 +692,7 @@ async function loadEventosPainel() {
                         <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                         <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
+                        <div onclick="deleteEvento(${eventos.id})">Apagar</div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
                         </div>
@@ -642,6 +721,7 @@ async function loadEventosPainel() {
                         <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                         <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
+                        <div onclick="deleteEvento(${eventos.id})">Apagar</div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
                         </div>
@@ -670,6 +750,7 @@ async function loadEventosPainel() {
                         <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                         <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
+                        <div onclick="deleteEvento(${eventos.id})">Apagar</div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
                         </div>
@@ -698,6 +779,7 @@ async function loadEventosPainel() {
                         <p>Limite de pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
                         <button onclick="limiteP()">SEPARAR VAGA</button>
                         </div>
+                        <div onclick="deleteEvento(${eventos.id})">Apagar</div>
                         <div class="card-footer text-right card-rodape-empresa text-muted">
                             EMPRESA QUE ESTÁ FAZENDO O EVENTO
                         </div>

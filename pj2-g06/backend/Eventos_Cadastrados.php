@@ -197,35 +197,108 @@
     
 
   <!--modal cadastrar-->
-  <div class="modal" id="modal-cadastrar" onclick="hideModalCadastrar('#modal-cadastrar', event)">
+  <div class="modal" id="modal-editar" onclick="hideModalCadastrar('#modal-editar', event)" style="height:1500px;">
     <div class="modal-body">
         <h1>Cadastro</h1>
-        <form onsubmit="insertCadastro(event)">
-          <label for="nome">Seu Nome:</label>
-          <input type="text" name="nome" required>
-          <label for="cpf">Seu CPF:</label>
-          <input type="cpf" name="cpf">
-          <label for="dataNascimento">Data Nascimento:</label>
-          <input type="date" name="dataNascimento">
+        <form onsubmit="editEvento(event)">
+                    <h1>Editar Evento</h1>
 
-          <label for="sexo">sexo:</label>
-            <select id="sexo" name="sexo">
-                <option value="selecione" selected disabled >Selecione</option>
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
+                    <label for="POST-name">Titulo:</label>
+            <input id="POST-name" type="text" name="nome"><br>
+
+            <label for="POST-name">Capa:</label>
+            <input id="POST-name" type="text" name="capa"><br>
+
+            <div class="cx1">
+                <label for="POST-name">Categoria:</label>
+                <select name="categoria" id="POST-name">
+                    <option value="selecione" selected disabled>Selecione</option>
+                    <option value="festas">Festas</option>
+                    <option value="halloween">Halloween</option>
+                    <option value="palestras">Palestras</option>
+                    <option value="standUP">StandUP</option>
+                    <option value="workshops">Workshops</option>
+                </select>
+
+                <label for="POST-name">Limite de Pessoas:</label>
+                <input type="number" name="limiteP" id="POST-name">
+            </div><br>
+
+            <div class="cx1">
+                <label for="POST-name">Data:</label>
+                <input id="POST-name" type="date" name="dia">
+
+                <label for="POST-name">Horário:</label>
+                <input id="POST-name" type="time" name="horario">
+            </div><br>
+
+            <label for="POST-name">Local:</label>
+            <input type="text" name="endereco" id="POST-name"><br>
+
+            <div class="cx1">
+                <label for="POST-name">Município:</label>
+                <input type="text" name="municipio" id="POST-name">
+
+                <label for="POST-name">UF:</label>
+                <select id="POST-name" name="uf">
+                    <option value="selecione" selected disabled >Selecione</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                    <option value="DF">DF</option>                    
+                </select>
+            </div><br>
+
+            <label for="POST-name">Descrição:</label>
+            <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea>
+
+            <h2>Editar Participantes</h2><br>
+
+            <label for="POST-name">CPF:</label>
+            <input type="text" id="POST-name" name="cpf"><br>
+
+            <label for="POST-name">Nome:</label>
+            <input type="text" id="POST-name" name="nomeP"><br>
+
+            <label for="POST-name">Sexo:</label>
+            <select name="sexo" id="POST-name">
+                <option value="selecione" selected disabled>Selecione</option>
+                <option value="feminino">F</option>
+                <option value="masculino">M</option>
             </select>
 
-          <label for="email">E-mail:</label>
-          <input type="email" name="email">
-          <label for="usuario">Usuario:</label>
-          <input type="text" name="usuario">
-          <label for="senha">Senha:</label>
-          <input type="text" name="senha">
-            
-          <button type="submit" onclick="closeAllModalCadastrat()">Cadastrar</button>
-        </form>
-    </div>
-</div>
+            <label for="POST-name">Descrição:</label>
+            <textarea name="descricaoP" id="POST-name" cols="30" rows="10"></textarea><br>
+
+            <input tyjpe="hidden" name="id"/>
+
+            <input id="cadastrar" type="submit" value="Cadastrar">
+                    </form>
+                </div>
+            </div>
 <script src="../assets/script.js"></script>
 <!-- <script src="assets/script/main.js"></script> -->
 </body>
