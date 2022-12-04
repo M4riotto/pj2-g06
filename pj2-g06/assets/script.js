@@ -139,7 +139,7 @@ async function loadEventos() {
                     </ul>
                     <div class="card-body card-body2 p-2">
                         <div style="display: flex; justify-content: space-between;">
-                            <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
+                            <p>Limite de Pessoas: <span class="limiteP" style="color: black;">${eventos.limiteP}</span></p>
                             <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center;"
@@ -251,7 +251,7 @@ function botoes(){
 
 function limiteP() {
     var paragraf = document.querySelector('.limiteP');
-    var btn = document.getElementById('btn'); 
+    var btn = document.querySelector('.vaga'); 
     var num = parseFloat(paragraf.textContent) - 1;
     paragraf.textContent = '' ;
     var text = String(paragraf.textContent) + 'Acabou as vagas';
@@ -381,8 +381,8 @@ async function loadEventosPainel() {
                     
                 <div class="card-body card-body2 p-2">
                     <div style="display: flex; justify-content: space-between;">
-                        <p>Limite de Pessoas: <span class="limiteP">${eventos.limiteP}</span></p>
-                        <button class="vaga" onclick="limiteP(this)">Separar Vaga</button>
+                        <p>Limite de Pessoas: <span class="limiteP" style="color: black;">${eventos.limiteP}</span></p>
+                        <button class="vaga" onclick="limiteP()">Separar Vaga</button>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;"
                         <p>Participantes:</p>
