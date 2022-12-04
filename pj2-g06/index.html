@@ -16,6 +16,13 @@
   <script src="bootstrap/js/bootstrap.js"></script>
 </head>
 <body onload="loadEventos(), loadSlide()">
+  <a href="index.html"><i class="fa-solid fa-arrow-up" style="position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0e8fff;
+  color: black;
+  padding: 15px;"></i></a>
+  
   <div class="wrapper">
     <nav class="navbar navbar-expand-lg navbar-light bg-faded"> <!-- navbar-light: cor padrão claro; bg-faded: colocar cor na nav;  -->
       <div class="container justify-content-center"> <!-- centralização dos atributos da nav -->
@@ -37,8 +44,8 @@
         <div class="navbar-collapse collapse ml-5" id="navbarsite">
           <ul class="navbar-nav">
             <li class="nav-item"><a href="#" class="nav-link active">Início</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+            <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li class="nav-item"><a href="#footer" class="nav-link">Contato</a></li>
           </ul> <!-- .navbar-nav-->
 
           <!--dropdown-->
@@ -125,7 +132,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer bg-dark text-center text-white">
+  <footer class="footer bg-dark text-center text-white" id="footer">
     <!-- Grid container -->
     <div class="container p-4">
       <!-- Section: Social media -->
@@ -191,9 +198,10 @@
       </section>
       <!-- Section: Form -->
       <!-- Section: Text -->
-      <section class="mb-4">
+      <section class="mb-4" id="sobre">
+        <h2 style="border: none; border-bottom: 1px solid orange;">Sobre Nós</h2>        
         <p>
-          Site desenvolvido para fins acadêmicos, com o intuito de aplicarmos tudo o que aprendemos em aula. O NossoSite tem como principal objetivo o cadastramento de eventos em geral.
+          Site desenvolvido para fins acadêmicos, com o intuito de aplicarmos tudo o que aprendemos em aula. O NossoSite tem como principal objetivo o cadastro de eventos em geral.
         </p>
       </section>
       <!-- Section: Text -->

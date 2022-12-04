@@ -105,7 +105,7 @@
     </div> <br><br>
 <hr>
     <div class="caixa2">
-        <form onsubmit="insertEventos(event)">
+        <form onsubmit="insertParticipantes(event)">
             <h2>Cadastrar Participantes</h2><br>
 
             <label for="POST-name">CPF:</label>
