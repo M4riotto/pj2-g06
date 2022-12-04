@@ -170,10 +170,7 @@ async function loadEventos() {
                                                     <td style="border: 1px solid black; padding: 5px;">${eventos.  descricaoP}</td>
                                                 </tr>
                                             </table><br>
-
-                                            <p>Palestrante: ${eventos.nomeP}</p>
-                                            <p>Sobre: ${eventos.descricaoP}</p>
-                                        </div>
+                                          </div>
 
                                         <!-- Rodapé do modal-->
                                         <div class="modal-footer">
@@ -416,9 +413,6 @@ async function loadEventosPainel() {
                                                 <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
                                             </tr>
                                         </table><br>
-
-                                        <p>Palestrante: ${eventos.nomeP}</p>
-                                        <p>Sobre: ${eventos.descricaoP}</p>
                                     </div>
 
                                     <!-- Rodapé do modal-->
