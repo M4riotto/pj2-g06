@@ -222,12 +222,6 @@ footer.footer{
     margin: 15px 0 0 0;
 }
 
-@media screen and (max-width: 600px){
-    .card{
-        width: 200px;
-    }
-}
-
 .wrapper1{
     color: black;
 }
@@ -294,4 +288,10 @@ span{
 
 .sair:hover {
     text-decoration: none;  
+}
+
+@media screen and (max-width: 600px){
+    .card{
+        width: 200px;
+    }
 }

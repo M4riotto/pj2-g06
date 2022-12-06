@@ -360,7 +360,7 @@ async function loadEventosPainel() {
         clientes.map((eventos) => {
             const card2 = `<div class="wrapper1 col-lg-3 col-md-4">
             <div class="card">
-                <div class="card-header col text-center p-2">Festas</div>
+                <div class="card-header col text-center p-2">${eventos.categoria}</div>
                 <img src="${eventos.capa}" class="card-img-top">
                 <div class="card-body card-body1">
                     <h5 class="card-title">${eventos.nome}</h5>
