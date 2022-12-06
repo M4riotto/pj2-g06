@@ -81,7 +81,7 @@ h1{
     background-color: var(--color2);
 }
 
-img.categoria{
+.cat > a > .categoria{
     border-radius: 200px;
     margin-left: 10px;
 }
@@ -91,6 +91,7 @@ img.categoria{
     flex-direction: row;
     overflow-x: auto;
     padding: 15px 0 35px 0;
+    margin-bottom: 30px;
 }
 
 h3.categoria {
@@ -290,8 +291,14 @@ span{
     text-decoration: none;  
 }
 
-@media screen and (max-width: 600px){
+@media (max-width: 600px){
     .card{
         width: 200px;
     }
+
+    .cat > a > .categoria {
+        width: 85px;
+        height: 60px;
+    }
+
 }
