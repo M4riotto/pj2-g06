@@ -1,16 +1,20 @@
 /*paleta de cores*/
 :root{
+    --nav: #0368f684;
+    --logo: #ecde73;
+    
     --color4: #3368b3;
     --color2: #e3ddb1;
     --fundo: #ced6e0;
     --categoria: #ffcb9a;
+    
 
     --color1: #ffbb9a;
     --color3: #091fb4;
     --color5: #3ecbff;
     
-    --primary: #298519;
-    --secundary: #319287;
+    
+    /* --secundary: #319287;
     --secundary-dark: #034d45;
     --grey-0: #000;   
     --grey-200: #181818;
@@ -21,7 +25,7 @@
 
     --color-primary-5: #56AB89;
     --color-primary-3: #2E795B;
-    --color-primary-4: #0F3526;
+    --color-primary-4: #0F3526; */
 }
 
 *{
@@ -30,85 +34,55 @@
     font-family: 'Bree Serif', serif; 
 }
 
-.bg-faded{
-    background-color: #0368f684;
+/* <index.html> */
+/* NAV */
+.wrapper > .bg-faded{
+    background-color: var(--nav);
 }
 
-#logo {
+.wrapper > .navbar > .container > #logo {
     display: flex;
     align-items: center;
     margin-right: 10px;
 }
 
-.imgLogo{
+#logo > .logo > .imgLogo{
     width: 50px;
     margin-right: 5px;
 }
 
-header{
-    background-color: #3eccff48;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-/*cor da navbar*/
-
-
-
-
-h1{
+#logo > h1{
     color: black;
 }
 
-.nav-link{
+#logo > h1 > span{
+    color: var(--logo);
+}
+
+#navbarsite > .navbar-nav > .nav-item > .nav-link{
     font-size: 18px;
     font-weight: bold;
     color: black;
 }
 
-.active {
+#navbarsite > .navbar-nav > .nav-item > .active {
     border-bottom: 3px solid black;
 }
 
-/* Div com os botões categoria e ver tudo alinhados */
-.botoes_categoria{
-    display: flex;
+/* DROPDOWN */
+.navbar-nav > .nav-item > .dropdown-menu {
+    border-radius: 10px;
 }
 
-.categoria {
-    background-color: var(--color2);
-}
-
-.cat > a > .categoria{
-    border-radius: 200px;
-    margin-left: 10px;
-}
-
-.cat{
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 8px 0 15px 0;
-}
-
-.categoria > .botoes_categoria > h3 {
-    font-weight: bold;
-    margin-top: 7px;
-    margin-left: 10px;
-    border-left: 5px solid rgb(233, 115, 18);
-    padding: 5px;
-}
-
-.sign-in, .sign-up, .btn-light, .form-control {
+/* FORMULARIO DE PESQUISA */
+.sign-in, .sign-up, .botao, .form-control {
     border-radius: 12px;
     background-color: rgb(219, 216, 216);
     border:  2px solid rgb(241, 238, 238);
     padding: 3px 9px;
 }
 
-.btn-light:hover{
+.botao:hover{
     background-color: rgb(175, 241, 180);
     border:  2px solid rgb(175, 241, 180);
 }
@@ -123,22 +97,52 @@ h1{
     border:  2px solid rgb(118, 223, 127);
 }
 
-/*scroll*/
+/* CATEGORIA */
+.categoria {
+    background-color: var(--color2);
+}
+
+.botoes_categoria{
+    display: flex;
+}
+
+.categoria > .botoes_categoria > h3 {
+    font-weight: bold;
+    margin-top: 7px;
+    margin-left: 10px;
+    border-left: 5px solid rgb(233, 115, 18);
+    padding: 5px;
+}
+
+.categoria > .cat{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 8px 0 15px 0;
+}
+
 .cat::-webkit-scrollbar {
-    height: 10px;               /* width of the entire scrollbar */
-  }
+    height: 10px; /* width of the entire scrollbar */
+}
 .cat::-webkit-scrollbar-track {
-    background: var(--grey-400);        /* color of the tracking area */
-  }
+    background: var(--grey-400); /* color of the tracking area */
+}
   
 .cat::-webkit-scrollbar-thumb {
-    background-color: var(--grey-600);    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-  }
+    background-color: var(--grey-600); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+}
 
-/*card*/
-.card-rodape-empresa{
-    font-size: 0.7rem;
+.categoria > .cat > a > .links{
+    border-radius: 200px;
+    margin-left: 10px;
+}
+
+/* DIVS DAS CATEGORIAS  */
+#corpo1 > h2{
+    margin-left: 30px;
+    border-left: 5px solid rgb(233, 115, 18);
+    padding: 5px;
 }
 
 #festas, #palestras, #halloween, #standUP, #workshops{
@@ -147,6 +151,40 @@ h1{
     overflow-x: auto;
     padding: 0;
 }
+
+/* FOOTER  */
+footer.end{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.btn-outline-light{
+    margin-top: 5px;
+}
+/* </index.html> */
+
+
+header{
+    background-color: #3eccff48;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+
+
+
+
+
+
+/*card*/
+.card-rodape-empresa{
+    font-size: 0.7rem;
+}
+
+
 
 .verMais{
     font-size: 12px;
@@ -167,19 +205,7 @@ h1{
     padding: 5px;
 }
 
-h2{
-    margin-left: 30px;
-    border-left: 5px solid rgb(233, 115, 18);
-    padding: 5px;
-}
 
-.btn-outline-light{
-    margin-top: 5px;
-}
-
-footer.footer{
-    font-family:Arial, Helvetica, sans-serif;
-}
 
 /*modal*/
 .modal{
@@ -273,9 +299,7 @@ footer.footer{
     width: 1px;
 }
 
-span{
-    color: var(--color2);
-}
+
 
 .sair{
     text-decoration: none;
