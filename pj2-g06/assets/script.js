@@ -129,14 +129,16 @@ async function loadEventos() {
                     <div class="card-body card-body1">
                         <h5 class="card-title">${eventos.nome}</h5>
                         <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                        <h5 class="card-title">Mais Informações</h5>
+                     <ul class="list-group">
+                            <li class="list-group-item">Dia: ${eventos.dia}</li>
+                            <li class="list-group-item">Horário: ${eventos.horario}</li>
+                            <li class="list-group-item">Local: ${eventos.endereco}</li>
+                            <li class="list-group-item">Município: ${eventos.municipio}</li>
+                            <li class="list-group-item">UF: ${eventos.uf}</li>
+                     </ul>
                     </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Dia: ${eventos.dia}</li>
-                        <li class="list-group-item">Horário: ${eventos.horario}</li>
-                        <li class="list-group-item">Local: ${eventos.endereco}</li>
-                        <li class="list-group-item">Município: ${eventos.municipio}</li>
-                        <li class="list-group-item">UF: ${eventos.uf}</li>
-                    </ul>
+                    
                     <div class="card-body card-body2 p-2">
                         <div style="display: flex; justify-content: space-between;">
                             <p>Limite de Pessoas: <span class="limiteP" style="color: black;">${eventos.limiteP}</span></p>
@@ -365,30 +367,27 @@ async function loadEventosPainel() {
                 <div class="card-body card-body1">
                     <h5 class="card-title">${eventos.nome}</h5>
                     <h6 class="card-sub-title mb-2 text-muted">${eventos.descricao}</h6>
+                    <h5 class="card-title">Mais Informações</h5>
+                 <ul class="list-group">
+                        <li class="list-group-item">Dia: ${eventos.dia}</li>
+                        <li class="list-group-item">Horário: ${eventos.horario}</li>
+                        <li class="list-group-item">Local: ${eventos.endereco}</li>
+                        <li class="list-group-item">Município: ${eventos.municipio}</li>
+                        <li class="list-group-item">UF: ${eventos.uf}</li>
+                 </ul>
                 </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Dia: ${eventos.dia}</li>
-                    <li class="list-group-item">Horário: ${eventos.horario}</li>
-                    <li class="list-group-item">Local: ${eventos.endereco}</li>
-                    <li class="list-group-item">Município: ${eventos.municipio}</li>
-                    <li class="list-group-item">UF: ${eventos.uf}</li>
-                </ul>
                 
-                <button onclick="deleteEvento(${eventos.id})">Apagar</button>
-                    <a href="#modal-editar">
-                        <button onclick="loadClienteData(${eventos.id})">EDITAR</button>
-                    </a>
-                    
                 <div class="card-body card-body2 p-2">
                     <div style="display: flex; justify-content: space-between;">
                         <p>Limite de Pessoas: <span class="limiteP" style="color: black;">${eventos.limiteP}</span></p>
-                        <button class="vaga" onclick="limiteP()">Separar Vaga</button>
+                        <a href="#modal-editar"> <button onclick="loadClienteData(${eventos.id})">EDITAR</button> </a>
+                        <button onclick="deleteEvento(${eventos.id})">Apagar</button> 
+                        
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;"
                         <p>Participantes:</p>
                         <!-- Botão que irá abrir o modal -->
                         <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
-                        
 
                         <!-- Modal -->
                         <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
@@ -410,10 +409,10 @@ async function loadEventosPainel() {
                                             </tr>
                                             <tr style="border: 1px solid black; padding: 5px;">
                                                 <td style="border: 1px solid black; padding: 5px;">${eventos.nomeP}</   td>
-                                                <td style="border: 1px solid black; padding: 5px;">${eventos.   descricaoP}</td>
+                                                <td style="border: 1px solid black; padding: 5px;">${eventos.  descricaoP}</td>
                                             </tr>
                                         </table><br>
-                                    </div>
+                                      </div>
 
                                     <!-- Rodapé do modal-->
                                     <div class="modal-footer">
