@@ -28,7 +28,7 @@
   <script src="../bootstrap/js/jquery.js"></script>
   <script src="../bootstrap/js/bootstrap.js"></script>
 </head>
-<body onload="loadEventosPainel()">
+<body onload="loadEventosPainel(), loadSlidePainel()">
   <div class="wrapper">
     <header class="justify-content-space-around">
         <h3>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h3><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
@@ -36,24 +36,24 @@
         <a class="sair" href="painel.php">Voltar</a>
     </header>
 
-  <!--categorias-->
-  <div class="categoria m-0 mt-0 mb-0">
+    <!--categorias-->
+    <div class="categoria">
     <div class="botoes_categoria">
-      <h3 class="ml-4 categoria">Categorias</h3>
+      <h3 class="ml-4">Categorias</h3>
       <!-- <button class="mr-3">Ver tudo</button> -->
     </div>
     
-    <div class="cat justify-space-evenly">
-      <a href="#festas"><img class="categoria" title="Festas" src="../img/festas.jpg" alt="Festas" width="150" height="150"></a>
-      <a href="#palestras"><img class="categoria" title="Palestras" src="../img/palestras.jpg" alt="Palestras" width="150" height="150"></a>
-      <a href="#halloween"><img class="categoria" title="Halloween" src="../img/halloween.jpg" alt="Halloween" width="150" height="150"></a>
-      <a href="#standUP"><img class="categoria" title="StandUp" src="../img/startup.jpg" alt="StandUp" width="150" height="150"></a>
-      <a href="#workshops"><img class="categoria" title="Workshops" src="../img/workshop.jpg" alt="Workshops" width="150" height="150"></a>
+    <div class="container-lg container-fluid-md cat justify-content-between">
+      <a href="#festas"><img class="links" title="Festas" src="../img/festas.jpg" alt="Festas" width="110" height="110"></a>
+      <a href="#palestras"><img class="links" title="Palestras" src="../img/palestras.jpg" alt="Palestras" width="110" height="110"></a>
+      <a href="#halloween"><img class="links" title="Halloween" src="../img/halloween.jpg" alt="Halloween" width="110" height="110"></a>
+      <a href="#standUP"><img class="links" title="StandUp" src="../img/startup.jpg" alt="StandUp" width="110" height="110"></a>
+      <a href="#workshops"><img class="links" title="Workshops" src="../img/workshop.jpg" alt="Workshops" width="110" height="110"></a>
     </div><!-- .cat -->
   </div> <!-- .categoria -->
 
-  <!-- Carousel -->
-  <div class="carousel slide mb-4" id="carouselhome" data-ride="carousel">
+   <!-- Carousel -->
+   <div class="carousel slide mb-4" id="carouselhome" data-ride="carousel">
     <!-- div que irá sustentar as imagens e textos do carousel -->
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -63,20 +63,7 @@
           <p class="d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div> <!-- Item 1 do carousel -->
-      <div class="carousel-item">
-        <img src="../img/carousel1.jpg" alt="" class="img-fluid d-block">
-        <div class="carousel-caption d-none d-block">
-          <h3>Esse, ipsam</h3>
-          <p class="d-none d-sm-block">Maxime cum commod filum exercitationem temporibus assumenda.</p>
-        </div>
-      </div> <!-- Item 2 do carousel -->
-      <div class="carousel-item">
-        <img src="../img/carousel2.jpg" alt="" class="img-fluid d-block">
-        <div class="carousel-caption d-none d-block">
-          <h3>Esse, ipsam</h3>
-          <p class="d-none d-sm-block">Maxime cum commod filum exercitationem temporibus assumenda.</p>
-        </div>
-      </div> <!-- Item 3 do carousel -->
+      <div id="carrossel"></div>
 
       <!-- Controles '<' '>' dos slides -->
       <a href="#carouselhome" class="carousel-control-prev" role="button" data-slide="prev">
@@ -87,13 +74,7 @@
         <span class="carousel-control-next-icon"></span>
         <span class="sr-only">Próximo</span>
       </a>
-
-      <!-- Lista com os indicadores '...' -->
-      <ol class="carousel-indicators">
-        <li class="active" data-target="#carouselhome" data-slide-to="0"></li>
-        <li data-target="#carouselhome" data-slide-to="1"></li>
-        <li data-target="#carouselhome" data-slide-to="2"></li>
-      </ol>
+      
     </div> <!-- <div class="carousel-inner"> -->
   </div> <!-- Carousel -->
 
@@ -296,6 +277,30 @@
                     </form>
                 </div>
             </div>
+
+            <!--modal editar slide-->
+            <div class="modal" id="modal-editarSlide" onclick="hideModalCadastrar('#modal-editarSlide', event)" style="height:1500px;">
+              <div class="modal-body">
+                  <form onsubmit="editSlide(event)">
+                              <h1>Editar Slide</h1>
+
+                              
+                      <label for="POST-name">Capa:</label>
+                      <input id="POST-name" type="text" name="capa"><br>
+
+                      <label for="POST-name">Titulo:</label>
+                      <input id="POST-name" type="text" name="titulo"><br>
+
+                      <label for="POST-name">Descrição:</label>
+                      <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea>
+
+                      <input type="hidden" name="id"/>
+
+                      <input id="cadastrar" type="submit" value="Cadastrar">
+                    </form>
+                </div>
+            </div>
+
 <script src="../assets/script.js"></script>
 <!-- <script src="assets/script/main.js"></script> -->
 </body>

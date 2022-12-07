@@ -108,7 +108,7 @@
                 
                     $_SESSION['id'] = $row_usuario['id'];//SESSION palavra reservada
                     $_SESSION['nome'] = $row_usuario['nome'];//passando o id e o nome para a variavel global com a informação   que vem do BDD 
-                    header("Location: painel.php");//se tudo der certo, redirecionar para essa pagina
+                    header("Location: Eventos_Cadastrados.php");//se tudo der certo, redirecionar para essa pagina
                 }else{
                     $_SESSION['msg'] = "<span style='color: #ff0000'>Erro: Usuário ou senha inválida!</span>";
                 }

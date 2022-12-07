@@ -343,6 +343,74 @@ async function editEvento(event) {
     }
 }
 
+async function loadSlidePainel() {
+    const response = await fetch('listSlidePainel.php')
+    const result = await response.json()
+    if (result?.success) {
+        const slide = document.querySelector('#carrossel')
+        slide.innerHTML = '';
+        const divSlide = result.data
+        divSlide.map((fotos) => {
+            slide.innerHTML += `<div class="carousel-item">
+            <img src="${fotos.capa}" alt="" class="img-fluid d-block">
+            <div class="carousel-caption d-none d-block">
+              <h3>${fotos.titulo}</h3>
+              <p class="d-none d-sm-block">${fotos.descricao}</p>
+              <button class="" onclick="deleteEvento(${fotos.id})">Apagar</button> 
+              <button class="" onclick="loadSlideData(${fotos.id})">Editar</button> 
+            </div>
+          </div> 
+          `
+        })
+    }else{
+        alert('Erro ao cadastrar a imagem')
+    }  //if
+}//funcao;
+
+async function loadSlideData(id) {
+    const response = await fetch('get-slide-by-id.php?id='+id)
+    const result = await response.json()               
+    if (result?.success) {
+        showModalCadastrar('#modal-editarSlide')
+
+        const capa = document.querySelector('#modal-editarSlide input[name=capa]')
+        capa.value = result.data.capa
+
+        const titulo = document.querySelector('#modal-editarSlide input[name=titulo]')
+        titulo.value = result.data.titulo
+
+        const descricao = document.querySelector('#modal-editarSlide textarea[name=descricao]')
+        descricao.value = result.data.descricao
+
+        const id = document.querySelector('#modal-editarSlide input[name=id]')
+        id.value = result.data.id
+    }
+}
+
+async function editSlide(event) {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const response = await fetch('editSlide.php?',{
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if (result?.success) {
+        closeAllModalCadastrar()
+        alert('Seu slide ' + result.data.titulo + ' foi editado com sucesso!');
+        loadEventosPainel()
+    }
+}
+
+async function deleteEvento(id) {
+    const response = await fetch('deleteSlide.php?id='+id)
+    const result = await response.json()               
+    if (result?.success) {
+        alert('Seu Slide foi excluido com sucesso!');
+        loadSlidePainel();
+    }
+}
+
 //FUNÇÃO CHAMADA QUANDO ATUALIZA O SITE, USADA PARA ADICIONAR OS EVENTOS QUE ESTÃO LISTADOS LÁ NO list-eventos.php
 async function loadEventosPainel() {
     const response = await fetch('listar-ev-par.php')
