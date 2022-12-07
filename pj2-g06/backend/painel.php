@@ -17,13 +17,16 @@
 
 <body class="login_entrar">
     <header>
-        <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
-        <a class="sair" href="Eventos_Cadastrados.php"><h4>Seus eventos</h4></a>
-        <a class="sair" href="logout.php"><h4>Sair</h4></a>
+        <div>
+            <img class="imgLogo" src="../img/logo.svg" alt="">
+            <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
+        </div>
+        <a class="verde" href="Eventos_Cadastrados.php"><h4>Seus eventos</h4></a>
+        <a class="vermelho" href="logout.php"><h4>Sair</h4></a>
     </header>
 
     <div class="caixaEventos">
-        <form onsubmit="insertEventos(event)">
+        <form class="painel" onsubmit="insertEventos(event)">
             <h2>Cadastrar Evento</h2><br>
             <p class="p1">Cadastre o <span id="numero">1</span>º evento</p>
             <p class="p1" id="cx"></p>
@@ -43,18 +46,15 @@
                     <option value="palestras">Palestras</option>
                     <option value="standUP">StandUP</option>
                     <option value="workshops">Workshops</option>
-                </select>
+                </select><br>
 
                 <label for="POST-name">Limite de Pessoas:</label>
                 <input type="number" name="limiteP" id="POST-name">
             </div><br>
 
-            <label for="POST-name">Local:</label>
-            <input type="text" name="endereco" id="POST-name"><br>
-
             <div class="cx1">
                 <label for="POST-name">Município:</label>
-                <input type="text" name="municipio" id="POST-name">
+                <input type="text" name="municipio" id="POST-name"><br>
 
                 <label for="POST-name">UF:</label>
                 <select id="POST-name" name="uf">
@@ -89,23 +89,26 @@
                 </select>
             </div><br>
 
-            <div class="cx1">
+            <label for="POST-name">Local:</label>
+            <input type="text" name="endereco" id="POST-name"><br>
+
+            <!-- <div class="cx1"> -->
                 <label for="POST-name">Data:</label>
-                <input id="POST-name" type="date" name="dia">
+                <input id="POST-name" type="date" name="dia"><br>
 
                 <label for="POST-name">Horário:</label>
-                <input id="POST-name" type="time" name="horario">
-            </div><br>
+                <input id="POST-name" type="time" name="horario"><br>
+            <!-- </div><br> -->
 
             <label for="POST-name">Descrição:</label><br>
             <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea><br>
 
             <input id="enviar" type="submit" value="Cadastrar" onclick="botoes();">   
         </form>
-    </div> <br><br>
+    </div>
 <hr>
     <div class="caixaParticipantes">
-        <form onsubmit="insertParticipantes(event)">
+        <form class="painel" onsubmit="insertParticipantes(event)">
             <h2>Cadastrar Participantes</h2><br>
 
             <label for="POST-name">CPF:</label>
@@ -132,7 +135,7 @@
     <div class="caixaImagens">
         <label>Pague R$5,00 para cadastrar uma a capa do seu evento em nosso Slide principal por 1 dia</label>
         <input type="button" value="Pagar" id="pagar" onclick="imagem_slide()">
-        <a href="#modal-cadastrarIMG"><input type="button" id="cadastrar-img" value="Clique aqui e Cadastre" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')"></input></a>
+        <a href="#modal-cadastrarIMG"><input type="button" id="cadastrar-img" value="Clique aqui e cadastre" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')"></input></a>
     </div>
 
     <!--modal cadastrar-->
