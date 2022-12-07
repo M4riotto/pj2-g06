@@ -276,6 +276,10 @@ input[type=submit]:hover{
 /* /painel.php */
 
 /*card*/
+.card-header, .card-footer{
+    background: none;
+}
+
 .card-rodape-empresa{
     font-size: 0.7rem;
 }
@@ -356,7 +360,6 @@ input[type=submit]:hover{
 .list-group{
     padding: 10px;
     height: 270px;
-    overflow-y: auto;
 }  
 .list-group-item{
     background-color: rgb(255, 212, 147);
@@ -375,7 +378,7 @@ input[type=submit]:hover{
     .card{
         width: 18rem;
     }
-    .cat > a > .categoria {
+    .cat > a > .links {
         width: 85px;
         height: 60px;
     }
