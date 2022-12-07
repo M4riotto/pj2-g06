@@ -12,17 +12,17 @@
     <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico"> -->
     <title>PAINEL</title>
     <link rel="stylesheet" href="../assets/custom.css">
-    <link rel="stylesheet" href="../assets/custom_painel.css">
+    <!-- <link rel="stylesheet" href="../assets/custom_painel.css"> -->
 </head>
 
-<body >
+<body class="login_entrar">
     <header>
         <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
-        <h2><a href="logout.php">Sair</a></h2>
-        <a href="Eventos_Cadastrados.php"><h2>Eventos Cadastrados</h2></a>
+        <a class="sair" href="Eventos_Cadastrados.php"><h4>Seus eventos</h4></a>
+        <a class="sair" href="logout.php"><h4>Sair</h4></a>
     </header>
 
-    <div class="caixa">
+    <div class="caixaEventos">
         <form onsubmit="insertEventos(event)">
             <h2>Cadastrar Evento</h2><br>
             <p class="p1">Cadastre o <span id="numero">1</span>º evento</p>
@@ -47,14 +47,6 @@
 
                 <label for="POST-name">Limite de Pessoas:</label>
                 <input type="number" name="limiteP" id="POST-name">
-            </div><br>
-
-            <div class="cx1">
-                <label for="POST-name">Data:</label>
-                <input id="POST-name" type="date" name="dia">
-
-                <label for="POST-name">Horário:</label>
-                <input id="POST-name" type="time" name="horario">
             </div><br>
 
             <label for="POST-name">Local:</label>
@@ -97,6 +89,14 @@
                 </select>
             </div><br>
 
+            <div class="cx1">
+                <label for="POST-name">Data:</label>
+                <input id="POST-name" type="date" name="dia">
+
+                <label for="POST-name">Horário:</label>
+                <input id="POST-name" type="time" name="horario">
+            </div><br>
+
             <label for="POST-name">Descrição:</label><br>
             <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea><br>
 
@@ -104,7 +104,7 @@
         </form>
     </div> <br><br>
 <hr>
-    <div class="caixa2">
+    <div class="caixaParticipantes">
         <form onsubmit="insertParticipantes(event)">
             <h2>Cadastrar Participantes</h2><br>
 
@@ -129,7 +129,7 @@
         </form>
     </div>
 <hr>
-    <div class="caixa3">
+    <div class="caixaImagens">
         <label>Pague R$5,00 para cadastrar uma a capa do seu evento em nosso Slide principal por 1 dia</label>
         <input type="button" value="Pagar" id="pagar" onclick="imagem_slide()">
         <a href="#modal-cadastrarIMG"><input type="button" id="cadastrar-img" value="Clique aqui e Cadastre" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')"></input></a>

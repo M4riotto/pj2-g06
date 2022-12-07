@@ -32,9 +32,11 @@
     margin: 0;
     padding: 0;
     font-family: 'Bree Serif', serif; 
+    text-decoration: none;
+    /* color: rgb(37, 37, 37); */
 }
 
-/* <index.html> */
+/* index.html */
 /* NAV */
 .wrapper > .bg-faded{
     background-color: var(--nav);
@@ -160,15 +162,107 @@ footer.end{
 .btn-outline-light{
     margin-top: 5px;
 }
-/* </index.html> */
+/* /index.html */
 
+/* painel.php */
+body.login_entrar{
+    background-color: var(--fundo);
+}
 
 header{
-    background-color: #3eccff48;
-    height: 100px;
+    background-color: var(--nav);
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+header > h2 > span{
+    font-size: 35px;
+    color: var(--logo);
+}
+
+header > a:hover{
+    color: var(--fundo);
+}
+
+.caixaEventos, .caixaParticipantes{
+    margin: 15px 0 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.caixaImagens{
+    margin: 15px 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.caixaEventos > form > h2{
+    text-align: center;
+}
+
+.p1, #numero, #cx {
+    text-align:center;
+    color: red;
+}
+
+.caixaEventos > form > label{
+    font-size: 18px;
+}
+
+.caixaParticipantes > form > label{
+    font-size: 18px;
+}
+
+.caixaImagens > label{
+    font-size: 20px;
+}
+
+.caixaImagens, input{
+    font-size: 16px;    
+}
+
+.caixaImagens  button{
+    padding: 15px;
+    border: 2px solid var(--color1);
+}
+
+.caixaImagens input:hover{
+    background-color: var(--color5);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+input, textarea, select{
+    margin: 3px 0 3px 0;
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid var(--color3);
+}
+
+input[type=submit]{
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+input[type=submit]:hover{
+    background-color: var(--color5);
+}
+
+.cx1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -183,8 +277,6 @@ header{
 .card-rodape-empresa{
     font-size: 0.7rem;
 }
-
-
 
 .verMais{
     font-size: 12px;
@@ -204,8 +296,6 @@ header{
     border: 0;
     padding: 5px;
 }
-
-
 
 /*modal*/
 .modal{

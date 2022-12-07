@@ -1,4 +1,4 @@
-:root{
+/* :root{
 --color1: #ffbb9a;
 --color2: #ffed6e;
 --color3: #091fb4;
@@ -8,31 +8,32 @@
 *{
     margin:0;
     padding:0;
-}
-a{
+} */
+/* a{
     text-decoration: none;
-}
-a:hover{
+} */
+/* a:hover{
     color: var(--color4);
     border-bottom: 2px solid var(--color2);
 }
 span, a{
     color: var(--color3);
-}
-body{
+} */
+/* body{
     background-color:var(--color5);
-}
-header{
+} */
+/* header{
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--color4);
     height: 80px;
-}
-h2{
+} */
+/* h2{
     text-align: center;
-}
-.caixa, .caixa2{
+} */
+
+/* .caixa, .caixa2{
     margin: 10px;
     display: flex;
     justify-content: center;
@@ -45,8 +46,8 @@ h2{
     gap: 10px;
     padding-bottom: 50px;
     padding-top: 10px;
-}
-.caixa3 > label{
+} */
+/* .caixa3 > label{
     font-size: 23px;
 }
 .caixa3, input{
@@ -58,8 +59,8 @@ h2{
 }
 .caixa3 input:hover{
     background-color: var(--color5);
-}
-form{
+} */
+/* form{
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -85,4 +86,4 @@ input[type=submit]:hover{
 .p1, #numero, #cx {
     text-align:center;
     color: red;
-}
+} */
