@@ -357,7 +357,7 @@ async function loadSlidePainel() {
             <div class="carousel-caption d-none d-block">
               <h3>${fotos.titulo}</h3>
               <p class="d-none d-sm-block">${fotos.descricao}</p>
-              <button class="" onclick="deleteEvento(${fotos.id})">Apagar</button> 
+              <button class="" onclick="deleteSlide(${fotos.id})">Apagar</button> 
               <button class="" onclick="loadSlideData(${fotos.id})">Editar</button> 
             </div>
           </div> 
@@ -389,7 +389,6 @@ async function loadSlideData(id) {
 }
 
 async function editSlide(event) {
-    event.preventDefault()
     const formData = new FormData(event.target)
     const response = await fetch('editSlide.php?',{
         method: 'POST',
@@ -399,16 +398,16 @@ async function editSlide(event) {
     if (result?.success) {
         closeAllModalCadastrar()
         alert('Seu slide ' + result.data.titulo + ' foi editado com sucesso!');
-        loadEventosPainel()
+        loadPage()
     }
 }
 
-async function deleteEvento(id) {
+async function deleteSlide(id) {
     const response = await fetch('deleteSlide.php?id='+id)
     const result = await response.json()               
     if (result?.success) {
-        alert('Seu Slide foi excluido com sucesso!');
-        loadSlidePainel();
+        alert('Seu Slide foi excluido com sucesso! Por favor recarregue a Página');
+        loadPage();
     }
 }
 
