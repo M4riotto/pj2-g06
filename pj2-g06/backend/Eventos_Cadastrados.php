@@ -39,7 +39,6 @@
         <a class="verde" href="painel.php">Cadastrar eventos</a>
         <a class="vermelho" href="logout.php">Sair</a>
       </div>
-      
     </header>
 
     <!--categorias-->
