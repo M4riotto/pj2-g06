@@ -71,7 +71,6 @@ async function insertParticipantes(event) {
 
 async function insertSlide(event) {
     //EVENT.PREVENTDEFAULT(): tira a forma padrão do carregamento, ou seja, o delay quando algo é adicionado na tela dando um flesh não acontecerá mais.
-    event.preventDefault()
     const formData = new FormData(event.target)
     const response = await fetch('../backend/insertSlide.php', {
         method: 'POST',
@@ -80,7 +79,7 @@ async function insertSlide(event) {
     const result = await response.json()
     if (result?.success) {
         alert('Sua imagem do evento '+ result.data.titulo+' foi cadastrada com sucesso!');
-        loadEventos();
+        loadPage();
     }
 }
 
