@@ -66,6 +66,7 @@ async function insertParticipantes(event) {
         alert('Participante '+result.data.nomeP+' cadastrado com sucesso!');
         loadEventos();
     }
+    window.location.replace("Eventos_Cadastrados.php")
 }
 
 async function insertSlide(event) {
@@ -523,5 +524,10 @@ function imagem_slide() {
     pagar.style.display="none";
     cadastro.style.backgroundColor="#308f19";
     cadastro.style.border="1px solid #288b28";   
+}
+
+function loadPage() {
+    loadEventosPainel();
+    loadSlidePainel();
 }
    

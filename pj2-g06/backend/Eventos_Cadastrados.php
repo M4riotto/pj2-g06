@@ -28,7 +28,7 @@
   <script src="../bootstrap/js/jquery.js"></script>
   <script src="../bootstrap/js/bootstrap.js"></script>
 </head>
-<body onload="loadEventosPainel(), loadSlidePainel()">
+<body onload="loadPage()">
   <div class="wrapper">
     <header class="justify-content-space-around">
       <div class="logo">
