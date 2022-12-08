@@ -517,8 +517,11 @@ async function loadEventosPainel() {
 
 function imagem_slide() {
     var pagar = document.querySelector('#pagar');
-    document.querySelector('#cadastrar-img').disabled = false;
-
+    document.querySelector('#cadastrar-img').disabled=false;
+    var cadastro = document.querySelector('#cadastrar-img');
+    
     pagar.style.display="none";
+    cadastro.style.backgroundColor="#308f19";
+    cadastro.style.border="1px solid #288b28";   
 }
    

@@ -38,55 +38,62 @@
             <input id="POST-name" type="text" name="capa"><br>
 
             <div class="cx1">
-                <label for="POST-name">Categoria:</label>
-                <select name="categoria" id="POST-name">
-                    <option value="selecione" selected disabled>Selecione</option>
-                    <option value="festas">Festas</option>
-                    <option value="halloween">Halloween</option>
-                    <option value="palestras">Palestras</option>
-                    <option value="standUP">StandUP</option>
-                    <option value="workshops">Workshops</option>
-                </select><br>
-
-                <label for="POST-name">Limite de Pessoas:</label>
-                <input type="number" name="limiteP" id="POST-name">
+                <div>
+                    <label for="POST-name">Categoria:</label><br>
+                    <select name="categoria" id="POST-name">
+                        <option value="selecione" selected disabled>Selecione</option>
+                        <option value="festas">Festas</option>
+                        <option value="halloween">Halloween</option>
+                        <option value="palestras">Palestras</option>
+                        <option value="standUP">StandUP</option>
+                        <option value="workshops">Workshops</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="POST-name">Limite de Pessoas:</label><br>
+                    <input type="number" name="limiteP" id="POST-name">
+                </div>
             </div><br>
 
             <div class="cx1">
-                <label for="POST-name">Município:</label>
-                <input type="text" name="municipio" id="POST-name"><br>
-
-                <label for="POST-name">UF:</label>
-                <select id="POST-name" name="uf">
-                    <option value="selecione" selected disabled >Selecione</option>
-                    <option value="AC">AC</option>
-                    <option value="AL">AL</option>
-                    <option value="AP">AP</option>
-                    <option value="AM">AM</option>
-                    <option value="BA">BA</option>
-                    <option value="CE">CE</option>
-                    <option value="ES">ES</option>
-                    <option value="GO">GO</option>
-                    <option value="MA">MA</option>
-                    <option value="MT">MT</option>
-                    <option value="MS">MS</option>
-                    <option value="MG">MG</option>
-                    <option value="PA">PA</option>
-                    <option value="PB">PB</option>
-                    <option value="PR">PR</option>
-                    <option value="PE">PE</option>
-                    <option value="PI">PI</option>
-                    <option value="RJ">RJ</option>
-                    <option value="RN">RN</option>
-                    <option value="RS">RS</option>
-                    <option value="RO">RO</option>
-                    <option value="RR">RR</option>
-                    <option value="SC">SC</option>
-                    <option value="SP">SP</option>
-                    <option value="SE">SE</option>
-                    <option value="TO">TO</option>
-                    <option value="DF">DF</option>                    
-                </select>
+                <div>
+                    <label for="POST-name">Município:</label><br>
+                    <input type="text" name="municipio" id="POST-name">
+                </div>
+                
+                <div>
+                    <label for="POST-name">UF:</label><br>
+                    <select id="POST-name" name="uf">
+                        <option value="selecione" selected disabled >Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                        <option value="DF">DF</option>                    
+                    </select>
+                </div>
             </div><br>
 
             <label for="POST-name">Local:</label>
