@@ -147,10 +147,10 @@ async function loadEventos() {
                         <div style="display: flex; justify-content: space-between; align-items: center;"
                             <p>Participantes:</p>
                             <!-- Botão que irá abrir o modal -->
-                            <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                            <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal${eventos.id}">Ver mais</button>
 
                             <!-- Modal -->
-                            <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
+                            <div id="meuModal${eventos.id}" class="modal fade" role="dialog" style="position:fixed">
                                 <div class="modal-dialog">
                                     <!-- Conteúdo do modal-->
                                     <div class="modal-content">
