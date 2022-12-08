@@ -79,7 +79,7 @@ async function insertSlide(event) {
     const result = await response.json()
     if (result?.success) {
         alert('Sua imagem do evento '+ result.data.titulo+' foi cadastrada com sucesso!');
-        loadEventos();
+        loadPage();
     }
 }
 
