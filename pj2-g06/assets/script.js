@@ -79,7 +79,7 @@ async function insertSlide(event) {
     const result = await response.json()
     if (result?.success) {
         alert('Sua imagem do evento '+ result.data.titulo+' foi cadastrada com sucesso!');
-        loadPage();
+        loadEventos();
     }
 }
 
@@ -405,7 +405,7 @@ async function deleteSlide(id) {
     const response = await fetch('deleteSlide.php?id='+id)
     const result = await response.json()               
     if (result?.success) {
-        alert('Seu Slide foi excluido com sucesso! Por favor recarregue a Página');
+        alert('Seu Slide foi excluido com sucesso! Por favor recarregue a página');
         loadPage();
     }
 }
