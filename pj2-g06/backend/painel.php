@@ -17,12 +17,13 @@
 
 <body class="login_entrar">
     <header>
-        <div>
+        <div class="logo">
             <img class="imgLogo" src="../img/logo.svg" alt="">
             <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
         </div>
-        <a class="verde" href="Eventos_Cadastrados.php"><h4>Seus eventos</h4></a>
-        <a class="vermelho" href="logout.php"><h4>Sair</h4></a>
+        <div class="BotoesNav">
+            <a class="verde" href="Eventos_Cadastrados.php"><h4>Meu perfil</h4></a>
+        </div>
     </header>
 
     <div class="caixaEventos">

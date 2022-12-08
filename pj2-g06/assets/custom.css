@@ -10,6 +10,10 @@
     --color3: #1859e6;
     --color5: #3ecbff;
 }
+.BotoesNav{
+    display: flex;
+    padding: 10px;
+}
 *{
     margin: 0;
     padding: 0;
@@ -145,15 +149,15 @@ header{
     align-items: center;
     justify-content: space-evenly;
 }
-header > div{
+header > div.logo {
     display: flex;
     align-items: center;
 }
-header > div > .imgLogo{
+header > div.logo > .imgLogo{
     width: 50px;
     margin-right: 5px;
 }
-header > div > h2 > span{
+header > div.logo > h2 > span{
     font-size: 35px;
     color: var(--logo);
 }
@@ -275,6 +279,7 @@ input[type=submit]:hover{
     padding: 8px;
     background-color: rgb(48, 143, 25);
     border:  2px solid rgb(40, 139, 40);
+    margin-right: 10px;
 }
 .vermelho{
     color: rgb(250, 250, 250);

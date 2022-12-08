@@ -31,9 +31,15 @@
 <body onload="loadEventosPainel(), loadSlidePainel()">
   <div class="wrapper">
     <header class="justify-content-space-around">
-        <h3>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h3><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
-        <a class="sair" href="logout.php">Sair</a>
-        <a class="sair" href="painel.php">Voltar</a>
+      <div class="logo">
+        <img class="imgLogo" src="../img/logo.svg" alt="">
+        <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
+      </div>
+      <div class="BotoesNav">
+        <a class="verde" href="painel.php">Cadastrar eventos</a>
+        <a class="vermelho" href="logout.php">Sair</a>
+      </div>
+      
     </header>
 
     <!--categorias-->
