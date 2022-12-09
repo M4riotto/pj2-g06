@@ -354,10 +354,10 @@ async function loadSlidePainel() {
             slide.innerHTML += `<div class="carousel-item">
             <img src="${fotos.capa}" alt="" class="img-fluid d-block">
             <div class="carousel-caption d-none d-block">
-              <h3>${fotos.titulo}</h3>
-              <p class="d-none d-sm-block">${fotos.descricao}</p>
-              <button class="" onclick="deleteSlide(${fotos.id})">Apagar</button> 
-              <button class="" onclick="loadSlideData(${fotos.id})">Editar</button> 
+                <h3>${fotos.titulo}</h3>
+                <p class="d-none d-sm-block">${fotos.descricao}</p>
+                <button class="editar" onclick="loadSlideData(${fotos.id})">Editar</button>
+                <button class="apagar" onclick="deleteSlide(${fotos.id})">Apagar</button>  
             </div>
           </div> 
           `
@@ -447,17 +447,18 @@ async function loadEventosPainel() {
                 <div class="card-body card-body2 p-2">
                     <div style="display: flex; justify-content: space-between;">
                         <p>Limite de Pessoas: <span class="limiteP" style="color: black;">${eventos.limiteP}</span></p>
-                        <a href="#modal-editar"> <button onclick="loadClienteData(${eventos.id})">EDITAR</button> </a>
-                        <button onclick="deleteEvento(${eventos.id})">Apagar</button> 
-                        
+                        <div>
+                            <img src="../img/edit.svg" alt="Editar" onclick="loadClienteData(${eventos.id})">
+                            <img src="../img/delete.svg" alt="Apagar" onclick="deleteEvento(${eventos.id})"">
+                        </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;"
                         <p>Participantes:</p>
                         <!-- Botão que irá abrir o modal -->
-                        <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal">Ver mais</button>
+                        <button type="button" class="verMais btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#meuModal${eventos.id}">Ver mais</button>
 
                         <!-- Modal -->
-                        <div id="meuModal" class="modal fade" role="dialog" style="position:fixed">
+                        <div id="meuModal${eventos.id}" class="modal fade" role="dialog" style="position:fixed">
                             <div class="modal-dialog">
                                 <!-- Conteúdo do modal-->
                                 <div class="modal-content">

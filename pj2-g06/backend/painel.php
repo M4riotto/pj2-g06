@@ -148,7 +148,7 @@
 
     <!--modal cadastrar-->
   <div class="modal" id="modal-cadastrarIMG" onclick="hideModalCadastrar('#modal-cadastrarIMG', event)">
-    <div class="modal-body">
+    <div class="modal-body bodyImg">
         <h1>Cadastrar imagem</h1>
         <form onsubmit="insertSlide(event)">
           <label for="capa">Capa:</label>
