@@ -213,10 +213,12 @@
     
 
   <!--modal cadastrar-->
-  <div class="modal" id="modal-cadastrar" onclick="hideModalCadastrar('#modal-cadastrar', event)">
-    <div class="modal-body cadastroP">
-        <h1>Cadastro</h1>
-        <form onsubmit="insertCadastro(event)">
+  <div class="modal" id="modal-cadastrar" onclick="hideModalCadastrar('#modal-cadastrar', event)" style="height:1500px; align-items: unset; color:black;">
+    <div class="modal-body">
+
+        <div class="caixaEventos">
+        <form onsubmit="insertCadastro(event)" class="painel">
+          <h2>Cadastro</h2>
           <label for="nome">Seu Nome:</label>
           <input type="text" name="nome" required>
           <label for="cpf">Seu CPF:</label>
@@ -238,10 +240,10 @@
           <label for="senha">Senha:</label>
           <input type="text" name="senha">
           
-          <button type="submit" onclick="closeAllModalCadastrar()">Cadastrar</button>
+          <input type="submit" onclick="closeAllModalCadastrar()" value="Cadastrar"></input>
         </form>
     </div>
-</div>
+  </div>
 </div>
 <script src="assets/script.js"></script>
 <!-- <script src="assets/script/main.js"></script> -->
