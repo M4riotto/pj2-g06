@@ -182,7 +182,8 @@
     
   <!--modal editar-->
   <div class="modal" id="modal-editar" onclick="hideModalCadastrar('#modal-editar', event)" style="height:2000px; align-items: unset;">
-    <div class="modal-body"><div class="caixaEventos">
+    <div class="modal-body">
+      <div class="caixaEventos">
         <form class="painel" onsubmit="editEvento(event)">
                     <h2>Editar Evento</h2>
 
@@ -269,8 +270,9 @@
             <label for="POST-name">Sexo:</label>
             <select name="sexo" id="POST-name">
                 <option value="selecione" selected disabled>Selecione</option>
-                <option value="feminino">F</option>
+                <option value="feminino" >F</option>
                 <option value="masculino">M</option>
+                <option value="masculino">I</option>
             </select>
 
             <label for="POST-name">Descrição:</label>
@@ -282,11 +284,13 @@
                     </form>
                 </div>
             </div>
+          </div>
 
             <!--modal editar slide-->
-            <div class="modal" id="modal-editarSlide" onclick="hideModalCadastrar('#modal-editarSlide', event)" style="height:1500px;">
+            <div class="modal" id="modal-editarSlide" onclick="hideModalCadastrar('#modal-editarSlide', event)" style="height:1500px; align-items: unset;">
               <div class="modal-body">
-                  <form onsubmit="editSlide(event)">
+              <div class="caixaEventos">
+                  <form onsubmit="editSlide(event)" class="painel">
                               <h1>Editar Slide</h1>
 
                               
@@ -306,6 +310,7 @@
                 </div>
             </div>
           </div>
+        </div>
 
 <script src="../assets/script.js"></script>
 <!-- <script src="assets/script/main.js"></script> -->

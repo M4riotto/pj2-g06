@@ -366,7 +366,14 @@ input[type=submit]:hover{
 .wrapper1{
     color: black;
 }
-.card{
+#festas > div > .card{
+    color: black;
+    background-color: red;
+    width: 18rem;
+    height: 590px;
+    border-radius: 30px;
+}
+#halloween > div > .card{
     color: black;
     background-color: var(--card);
     width: 18rem;
