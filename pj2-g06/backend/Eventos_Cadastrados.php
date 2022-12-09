@@ -85,15 +85,15 @@
 
   <!--divs das categorias para js--> <!-- Aqui irá aparecer os cards -->
   <div id="corpo1">
-    <h2>Festas</h2>
+    <h2 class="festas">Festas</h2>
     <div id="festas"></div>
-    <h2>Palestras</h2>
+    <h2 class="palestras">Palestras</h2>
     <div id="palestras"></div>
-    <h2>Halloween</h2>
+    <h2 class="halloween">Halloween</h2>
     <div id="halloween"></div>
-    <h2>StandUP</h2>
+    <h2 class="standup">StandUP</h2>
     <div id="standUP"></div>
-    <h2>Workshops</h2>
+    <h2 class="workshops">Workshops</h2>
     <div id="workshops"></div>
   </div>
 

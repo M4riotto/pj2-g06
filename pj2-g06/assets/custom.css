@@ -5,8 +5,6 @@
     --form: rgb(227, 247, 255);
     --fundo: #e4e0e0d5;
     --categoria: #ffcb9a;
-    --card: rgb(159, 177, 216);
-
     --color1: #ffbb9a;
     --color3: #1859e6;
     --color5: #868686;
@@ -89,7 +87,7 @@
     font-weight: bold;
     margin-top: 7px;
     margin-left: 10px;
-    border-left: 5px solid var(--nav);
+    border-left: 5px solid rgb(88, 88, 88);
     padding: 5px;
 }
 .categoria > .cat{
@@ -113,11 +111,39 @@
     margin-left: 10px;
 }
 /* DIVS DAS CATEGORIAS  */
-#corpo1 > h2{
+#corpo1 > .festas{
     margin-left: 30px;
     margin-bottom: 18px;
     margin-top: 18px;
-    border-left: 5px solid var(--nav);
+    border-left: 5px solid rgb(171, 236, 145);
+    padding: 5px;
+}
+#corpo1 > .palestras{
+    margin-left: 30px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    border-left: 5px solid rgb(159, 177, 216);
+    padding: 5px;
+}
+#corpo1 > .halloween{
+    margin-left: 30px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    border-left: 5px solid rgb(255, 181, 97);
+    padding: 5px;
+}
+#corpo1 > .standup{
+    margin-left: 30px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    border-left: 5px solid rgb(225, 165, 253);
+    padding: 5px;
+}
+#corpo1 > .workshops{
+    margin-left: 30px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    border-left: 5px solid rgb(211, 106, 141);
     padding: 5px;
 }
 #festas, #palestras, #halloween, #standUP, #workshops{
@@ -395,14 +421,35 @@ input[type=submit]:hover{
 }
 #festas > div > .card{
     color: black;
-    background-color: red;
+    background-color: rgb(171, 236, 145);
     width: 18rem;
     height: 590px;
     border-radius: 30px;
 }
 #halloween > div > .card{
     color: black;
-    background-color: var(--card);
+    background-color: rgb(255, 181, 97);
+    width: 18rem;
+    height: 590px;
+    border-radius: 30px;
+}
+#palestras > div > .card{
+    color: black;
+    background-color: rgb(159, 177, 216);
+    width: 18rem;
+    height: 590px;
+    border-radius: 30px;
+}
+#standUP > div > .card{
+    color: black;
+    background-color: rgb(225, 165, 253);
+    width: 18rem;
+    height: 590px;
+    border-radius: 30px;
+}
+#workshops > div > .card{
+    color: black;
+    background-color: rgb(211, 106, 141);
     width: 18rem;
     height: 590px;
     border-radius: 30px;
@@ -425,8 +472,20 @@ input[type=submit]:hover{
     padding: 10px;
     height: 270px;
 }  
-.list-group-item{
+#festas > div > .card > .card-body > .list-group > .list-group-item{
+    background-color:rgb(208, 253, 190);
+}
+#palestras > div > .card > .card-body > .list-group > .list-group-item{
     background-color:rgb(209 198 255);
+}
+#halloween > div > .card > .card-body > .list-group > .list-group-item{
+    background-color:rgb(255, 218, 175);
+}
+#standUP > div > .card > .card-body > .list-group > .list-group-item{
+    background-color:rgb(228, 191, 245);
+}
+#workshops > div > .card > .card-body > .list-group > .list-group-item{
+    background-color:rgb(255, 187, 210);
 }
 /*personalizar a barra em geral*/
 .list-group::-webkit-scrollbar {
