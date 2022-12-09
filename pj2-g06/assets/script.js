@@ -521,7 +521,7 @@ function imagem_slide() {
     
     pagar.style.display="none";
     cadastro.style.backgroundColor="#308f19";
-    cadastro.style.border="1px solid #288b28";   
+    cadastro.style.border="1px solid #288b28";
 }
 
 function loadPage() {

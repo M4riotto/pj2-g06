@@ -1,18 +1,15 @@
-/*paleta de cores*/
+                                                                            /*paleta de cores*/
 :root{
     --nav: #0368f684;
     --logo: #f0e16f;
     --form: rgb(227, 247, 255);
-    --fundo: #fffadfd5;
+    --fundo: #e4e0e0d5;
     --categoria: #ffcb9a;
+    --card: rgb(159, 177, 216);
 
     --color1: #ffbb9a;
     --color3: #1859e6;
-    --color5: #3ecbff;
-}
-.BotoesNav{
-    display: flex;
-    padding: 10px;
+    --color5: #868686;
 }
 *{
     margin: 0;
@@ -48,7 +45,7 @@
 #navbarsite > .navbar-nav > .nav-item > .active {
     color: rgb(44, 39, 39);
     padding-bottom: 0;
-    border-bottom: 2px solid rgb(44, 39, 39);
+    border-bottom: 2px solid var(--logo);
 }
 /* DROPDOWN */
 .navbar-nav > .nav-item > .dropdown-menu {
@@ -84,17 +81,15 @@
     border:  2px solid rgb(56, 201, 68);
 }
 /* CATEGORIA */
-.categoria {
-    background-color: var(--fundo);
-}
 .botoes_categoria{
     display: flex;
+    margin-top: 10px;
 }
 .categoria > .botoes_categoria > h3 {
     font-weight: bold;
     margin-top: 7px;
     margin-left: 10px;
-    border-left: 5px solid rgb(233, 115, 18);
+    border-left: 5px solid var(--nav);
     padding: 5px;
 }
 .categoria > .cat{
@@ -120,7 +115,9 @@
 /* DIVS DAS CATEGORIAS  */
 #corpo1 > h2{
     margin-left: 30px;
-    border-left: 5px solid rgb(233, 115, 18);
+    margin-bottom: 18px;
+    margin-top: 18px;
+    border-left: 5px solid var(--nav);
     padding: 5px;
 }
 #festas, #palestras, #halloween, #standUP, #workshops{
@@ -139,7 +136,7 @@ footer.end{
 /* /index.html */
 
 /* painel.php */
-body.login_entrar{
+body{
     background-color: var(--fundo);
 }
 header{
@@ -163,6 +160,10 @@ header > div.logo > h2 > span{
 }
 header > a:hover{
     color: var(--fundo);
+}
+.BotoesNav{
+    display: flex;
+    padding: 10px;
 }
 .caixaEventos, .caixaParticipantes{
     margin: 15px 0 15px 0;
@@ -228,7 +229,6 @@ form.painel{
     border:  2px solid rgb(174, 255, 174);
     font-size: 16px;
 }
-
 .caixaImagens > a > input:hover{
     text-decoration: none;
     color: rgb(197, 196, 196);
@@ -304,21 +304,29 @@ input[type=submit]:hover{
     font-size: 0.7rem;
 }
 .verMais{
+    color: rgb(250, 250, 250);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: rgb(48, 143, 25);
+    border:  2px solid rgb(40, 139, 40);
+    margin-right: 10px;
     font-size: 12px;
     margin-bottom: 10px;
-    border:0;
-    border-radius: 15px;
-    background-color: #298519;
-    color: #000;
-    padding: 3px 10px;
 }
 .vaga {
     margin-bottom: 10px;
     font-size: 12px;
-    background-color: rgb(187, 27, 27);
-    border-radius: 15px;
-    border: 0;
-    padding: 5px;
+    color: rgb(250, 250, 250);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: rgb(194, 26, 26);
+    border:  2px solid rgb(199, 31, 31);
+}
+.vaga:hover, .verMais:hover{
+    text-decoration: none;
+    color: rgb(197, 196, 196);
 }
 /*modal*/
 .modal{
@@ -359,8 +367,10 @@ input[type=submit]:hover{
     color: black;
 }
 .card{
-    background-color: rgb(255, 238, 213);
+    color: black;
+    background-color: var(--card);
     width: 18rem;
+    height: 590px;
     border-radius: 30px;
 }
 .card-img-top{
@@ -382,7 +392,7 @@ input[type=submit]:hover{
     height: 270px;
 }  
 .list-group-item{
-    background-color: rgb(255, 212, 147);
+    background-color:rgb(209 198 255);
 }
 /*personalizar a barra em geral*/
 .list-group::-webkit-scrollbar {
