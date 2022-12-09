@@ -176,15 +176,15 @@
     <div class="text-center text-muted footer-bg-color p-3">
       © 2022 Copyright | Giovanna Siqueira | Vítor Moreira
     </div>
+</footer>
     <!-- Copyright -->
-    
 
-  <!--modal cadastrar-->
-  <div class="modal" id="modal-editar" onclick="hideModalCadastrar('#modal-editar', event)" style="height:1500px;">
-    <div class="modal-body">
-        <h1>Cadastro</h1>
-        <form onsubmit="editEvento(event)">
-                    <h1>Editar Evento</h1>
+    
+  <!--modal editar-->
+  <div class="modal" id="modal-editar" onclick="hideModalCadastrar('#modal-editar', event)" style="height:2000px; align-items: unset;">
+    <div class="modal-body"><div class="caixaEventos">
+        <form class="painel" onsubmit="editEvento(event)">
+                    <h2>Editar Evento</h2>
 
                     <label for="POST-name">Titulo:</label>
             <input id="POST-name" type="text" name="nome"><br>
@@ -305,6 +305,7 @@
                     </form>
                 </div>
             </div>
+          </div>
 
 <script src="../assets/script.js"></script>
 <!-- <script src="assets/script/main.js"></script> -->
