@@ -15,7 +15,7 @@
     <!-- <link rel="stylesheet" href="../assets/custom_painel.css"> -->
 </head>
 
-<body class="login_entrar">
+<body>
     <header>
         <div class="logo">
             <img class="imgLogo" src="../img/logo.svg" alt="">
