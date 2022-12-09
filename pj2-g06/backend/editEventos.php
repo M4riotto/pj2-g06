@@ -42,9 +42,9 @@
 
         $stmt->execute();
         // echo "Cadastro com sucesso!";
-        $count = $stmt->rowCount();
+        $line = $stmt->rowCount();
 
-        if ($count == 1) {
+        if ($line = 1) {
             $result["success"]["message"] = "Editado com sucesso!";
                         
             $result["data"]["id"] = $id; //criamos o array para devolver o resultado do insert com os dados inseridos.
