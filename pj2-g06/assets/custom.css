@@ -329,6 +329,10 @@ input[type=submit]:hover{
     color: rgb(197, 196, 196);
 }
 /*modal*/
+.modal-content{
+    background-color: #bccbdd;
+    border-radius: 30px;
+}
 .modal{
     background-color: #0c0c0c85;
     position: absolute;
@@ -356,9 +360,21 @@ input[type=submit]:hover{
     color: var(--grey-0);
     padding: 30px 20px;
 }
+.modal .cadastroP{
+    top: 20px;
+    max-width: 600px;
+    height: 880px;
+    border-radius: 15px;
+    background-color: #e4e0f9;
+    color: black;
+    padding: 30px 20px;
+}
 .modal .modal-body form{
     display: flex;
     flex-direction: column;
+}
+.modal .cadastroP form{
+    align-items: center;
 }
 .modal .modal-body form label{
     margin: 15px 0 0 0;
@@ -367,6 +383,9 @@ input[type=submit]:hover{
     height: 30px;
     padding: 3px 5px;
     border-radius: 10px;
+}
+.modal .cadastroP form input, select{
+    width: 70%;
 }
 .modal .modal-body form button{
     margin: 15px 0 0 0;
