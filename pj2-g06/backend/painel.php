@@ -9,12 +9,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico"> -->
     <title>PAINEL</title>
     <link rel="stylesheet" href="../assets/custom.css">
-    <!-- <link rel="stylesheet" href="../assets/custom_painel.css"> -->
 </head>
-
 <body>
     <header>
         <div class="logo">

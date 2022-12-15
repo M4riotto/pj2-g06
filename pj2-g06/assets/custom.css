@@ -1,4 +1,4 @@
-                                                                            /*paleta de cores*/
+/*paleta de cores*/
 :root{
     --nav: #0368f684;
     --logo: #f0e16f;
@@ -15,12 +15,14 @@
     font-family: 'Bree Serif', serif; 
     text-decoration: none;
 }
-/* index.html */
-/* NAV */
+body{
+    background-color: var(--fundo);
+}
+/* index.html *//* Nav */
 .wrapper > .bg-faded{
     background-color: var(--nav);
 }
-.wrapper > .navbar > .container > #logo {
+.wrapper > .navbar > .cont > #logo {
     display: flex;
     align-items: center;
     margin-right: 10px;
@@ -47,10 +49,10 @@
 }
 /* DROPDOWN */
 .navbar-nav > .nav-item > .dropdown-menu {
-    border-radius: 10px;
+    border-radius: 15px;
 }
 /* FORMULARIO DE PESQUISA */
-.sign-in, .sign-up, .botao, .form-control {
+.form-control, .botao, .sign-in, .sign-up {
     border-radius: 12px;
     padding: 3px 9px;
 }
@@ -80,7 +82,6 @@
 }
 /* CATEGORIA */
 .botoes_categoria{
-    display: flex;
     margin-top: 10px;
 }
 .categoria > .botoes_categoria > h3 {
@@ -90,28 +91,28 @@
     border-left: 5px solid rgb(88, 88, 88);
     padding: 5px;
 }
-.categoria > .cat{
+.categoria > .categorias{
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     padding: 8px 0 15px 0;
 }
-.cat::-webkit-scrollbar {
+.categorias::-webkit-scrollbar {
     height: 10px; /* width of the entire scrollbar */
 }
-.cat::-webkit-scrollbar-track {
+.categorias::-webkit-scrollbar-track {
     background: var(--grey-400); /* color of the tracking area */
 }
-.cat::-webkit-scrollbar-thumb {
+.categorias::-webkit-scrollbar-thumb {
     background-color: var(--grey-600); /* color of the scroll thumb */
     border-radius: 20px; /* roundness of the scroll thumb */
 }
-.categoria > .cat > a > .links{
+.categoria > .categorias > a > img{
     border-radius: 200px;
     margin-left: 10px;
 }
 /* DIVS DAS CATEGORIAS  */
-#corpo1 > .festas{
+#caixaCategorias > h2{
     margin-left: 30px;
     margin-bottom: 18px;
     margin-top: 18px;
@@ -153,18 +154,13 @@
     padding: 0;
 }
 /* FOOTER  */
-footer.end{
+#footer{
     font-family:Arial, Helvetica, sans-serif;
 }
-.btn-outline-light{
-    margin-top: 5px;
+#footer > .container #contato > .form > .row .formulario > .form-outline .botao1 > .submit{
+    margin-top: 100px;
 }
-/* /index.html */
-
-/* painel.php */
-body{
-    background-color: var(--fundo);
-}
+/* PAINEL.PHP */
 header{
     background-color: var(--nav);
     height: 90px;
@@ -172,21 +168,21 @@ header{
     align-items: center;
     justify-content: space-evenly;
 }
-header > div.logo {
+header > .logo {
     display: flex;
     align-items: center;
 }
-header > div.logo > .imgLogo{
+header > .logo > .imgLogo{
     width: 50px;
     margin-right: 5px;
 }
-header > div.logo > h2 > span{
+header > .logo > h2 > span{
     font-size: 35px;
     color: var(--logo);
 }
-header > a:hover{
+/* header > a:hover{
     color: var(--fundo);
-}
+} */
 .BotoesNav{
     display: flex;
     padding: 10px;
