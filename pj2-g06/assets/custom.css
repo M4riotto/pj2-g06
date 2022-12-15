@@ -22,7 +22,7 @@
 .wrapper > .bg-faded{
     background-color: var(--nav);
 }
-.wrapper > .navbar > .container > #logo {
+.wrapper > .navbar > .cont > #logo {
     display: flex;
     align-items: center;
     margin-right: 10px;
@@ -49,10 +49,10 @@
 }
 /* DROPDOWN */
 .navbar-nav > .nav-item > .dropdown-menu {
-    border-radius: 10px;
+    border-radius: 15px;
 }
 /* FORMULARIO DE PESQUISA */
-.sign-in, .sign-up, .botao, .form-control {
+.form-control, .botao, .sign-in, .sign-up {
     border-radius: 12px;
     padding: 3px 9px;
 }
@@ -82,7 +82,6 @@
 }
 /* CATEGORIA */
 .botoes_categoria{
-    display: flex;
     margin-top: 10px;
 }
 .categoria > .botoes_categoria > h3 {
@@ -92,28 +91,28 @@
     border-left: 5px solid var(--nav);
     padding: 5px;
 }
-.categoria > .cat{
+.categoria > .categorias{
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     padding: 8px 0 15px 0;
 }
-.cat::-webkit-scrollbar {
+.categorias::-webkit-scrollbar {
     height: 10px; /* width of the entire scrollbar */
 }
-.cat::-webkit-scrollbar-track {
+.categorias::-webkit-scrollbar-track {
     background: var(--grey-400); /* color of the tracking area */
 }
-.cat::-webkit-scrollbar-thumb {
+.categorias::-webkit-scrollbar-thumb {
     background-color: var(--grey-600); /* color of the scroll thumb */
     border-radius: 20px; /* roundness of the scroll thumb */
 }
-.categoria > .cat > a > .links{
+.categoria > .categorias > a > img{
     border-radius: 200px;
     margin-left: 10px;
 }
 /* DIVS DAS CATEGORIAS  */
-#corpo1 > h2{
+#caixaCategorias > h2{
     margin-left: 30px;
     margin-bottom: 18px;
     margin-top: 18px;
@@ -127,15 +126,13 @@
     padding: 0;
 }
 /* FOOTER  */
-footer.end{
+#footer{
     font-family:Arial, Helvetica, sans-serif;
 }
-.btn-outline-light{
-    margin-top: 5px;
+#footer > .container #contato > .form > .row .formulario > .form-outline .botao1 > .submit{
+    margin-top: 100px;
 }
-/* /index.html */
-
-/* painel.php */
+/* PAINEL.PHP */
 body{
     background-color: var(--fundo);
 }
