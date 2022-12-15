@@ -1,4 +1,4 @@
-                                                                            /*paleta de cores*/
+/*paleta de cores*/
 :root{
     --nav: #0368f684;
     --logo: #f0e16f;
@@ -17,8 +17,10 @@
     font-family: 'Bree Serif', serif; 
     text-decoration: none;
 }
-/* index.html */
-/* NAV */
+body{
+    background-color: var(--fundo);
+}
+/* index.html *//* Nav */
 .wrapper > .bg-faded{
     background-color: var(--nav);
 }
@@ -133,9 +135,6 @@
     margin-top: 100px;
 }
 /* PAINEL.PHP */
-body{
-    background-color: var(--fundo);
-}
 header{
     background-color: var(--nav);
     height: 90px;
@@ -143,21 +142,21 @@ header{
     align-items: center;
     justify-content: space-evenly;
 }
-header > div.logo {
+header > .logo {
     display: flex;
     align-items: center;
 }
-header > div.logo > .imgLogo{
+header > .logo > .imgLogo{
     width: 50px;
     margin-right: 5px;
 }
-header > div.logo > h2 > span{
+header > .logo > h2 > span{
     font-size: 35px;
     color: var(--logo);
 }
-header > a:hover{
+/* header > a:hover{
     color: var(--fundo);
-}
+} */
 .BotoesNav{
     display: flex;
     padding: 10px;
