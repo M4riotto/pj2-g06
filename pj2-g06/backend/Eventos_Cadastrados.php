@@ -37,7 +37,7 @@
       </div>
       <div class="BotoesNav">
         <a class="verde" href="painel.php">Cadastrar eventos</a>
-        <a class="vermelho" href="logout.php">Sair</a>
+        <a class="vermelho" href="../index.html">Sair</a>
       </div>
     </header>
 
