@@ -19,7 +19,7 @@
             <h2>Olá, <span><?php echo $_SESSION['nome'];?>!</span></h2><!--pegando a variavel global e o que esta salvo como o nome da pessoa-->
         </div>
         <div class="BotoesNav">
-            <a class="verde" href="Eventos_Cadastrados.php"><h4>Meu perfil</h4></a>
+            <a href="Eventos_Cadastrados.php"><h4>Meu perfil</h4></a>
         </div>
     </header>
 
@@ -97,21 +97,19 @@
             <label for="POST-name">Local:</label>
             <input type="text" name="endereco" id="POST-name"><br>
 
-            <!-- <div class="cx1"> -->
-                <label for="POST-name">Data:</label>
-                <input id="POST-name" type="date" name="dia"><br>
+            <label for="POST-name">Data:</label>
+            <input id="POST-name" type="date" name="dia"><br>
 
-                <label for="POST-name">Horário:</label>
-                <input id="POST-name" type="time" name="horario"><br>
-            <!-- </div><br> -->
+            <label for="POST-name">Horário:</label>
+            <input id="POST-name" type="time" name="horario"><br>
 
             <label for="POST-name">Descrição:</label><br>
             <textarea name="descricao" id="POST-name" cols="50" rows="5"></textarea><br>
 
             <input id="enviar" type="submit" value="Cadastrar" onclick="botoes();">   
         </form>
-    </div>
-<hr>
+    </div><hr>
+
     <div class="caixaParticipantes">
         <form class="painel" onsubmit="insertParticipantes(event)">
             <h2>Cadastrar Participantes</h2><br>
@@ -135,12 +133,13 @@
 
             <input id="cadastrar" type="submit" value="Cadastrar">
         </form>
-    </div>
-<hr>
+    </div><hr>
+
     <div class="caixaImagens">
         <label>Pague R$5,00 para cadastrar uma a capa do seu evento em nosso Slide principal por 1 dia</label>
-        <input type="button" value="Pagar" id="pagar" onclick="imagem_slide()">
-        <a href="#modal-cadastrarIMG"><input type="button" id="cadastrar-img" value="Clique aqui e cadastre" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')"></input></a>
+        <input class="vermelho" type="submit" value="Pagar" id="pagar" onclick="imagem_slide()">
+
+        <a href="#modal-cadastrarIMG"><input type="submit" id="cadastrar-img" value="Clique aqui e cadastre" disabled="disabled" onclick="showModalCadastrar('#modal-cadastrarIMG')"></input></a>
     </div>
 
     <!--modal cadastrar-->
@@ -150,15 +149,17 @@
         <form onsubmit="insertSlide(event)">
           <label for="capa">Capa:</label>
           <input type="text" name="capa" required placeholder="Cole link de imagem">
+
           <label for="titulo">Titulo do evento:</label>
           <input type="text" name="titulo" placeholder="Um titulo de até 20 letras">
+
           <label for="descricao">Descrição:</label>
-          <input type="text" name="descricao" placeholder="Uma descrição de até 50 letras">  <br>       
+          <input type="text" name="descricao" placeholder="Uma descrição de até 50 letras"><br>  
+
           <input type="submit" value="Cadastrar" onclick="closeAllModalCadastrar()"></input>
         </form>
     </div>
 </div>
-
-    <script src="../assets/script.js"></script>
+<script src="../assets/script.js"></script>
 </body>
 </html>
